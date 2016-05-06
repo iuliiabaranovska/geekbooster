@@ -1,4 +1,5 @@
-@import "normalizer/_normalize.scss";
+@import "normalizer/normalize";
+@include normalize();
 header {
     height: 10%;
 }
