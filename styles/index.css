@@ -404,6 +404,8 @@ header {
       width: 30em;
       text-align: right;
       align-items: flex-end; }
+      header .headermenu div.end-items span:last-child > a {
+        margin-right: 0; }
     header .headermenu div.empty {
       width: calc(100% - 44em); }
     header .headermenu a.item {
