@@ -4,21 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Geek Booster</title>
+    <link rel="stylesheet" type="text/css" href="../packages/slider/css/unslider.css">
+    <link rel="stylesheet" type="text/css" href="../packages/slider/css/unslider-dots.css">
     <link rel="stylesheet" type="text/css" href="../styles/index.css">
 </head>
 
-<body>
+<body style="background-color: gray;">
     <header>
-    <object class="logo" data="../images/header/logo.svg" type="image/svg+xml"></object>
-        
+        <object class="logo" data="../images/header/logo.svg" type="image/svg+xml"></object>
         <div class="headermenu">
-
             <div class="start-items">
                 <span><a class="item" href="#"> Projects </a></span>
                 <span><a class="item" href="#"> | </a></span>
                 <span><a class="item" href="#"><object class="search" data="../images/header/search.svg" type="image/svg+xml"></object></a></span>
             </div>
-            <!-- <span class="empty"></span> -->
             <div class="empty"></div>
             <div class="end-items">
                 <span><a class="item" href="#"> About </a></span>
@@ -30,6 +29,30 @@
             </div>
         </div>
     </header>
+    <div class="slider" style="color: black; background-color: gray;">
+        <ul>
+            <li></li>
+            <li style="display: none;"></li>
+            <li style="display: none;"></li>
+            <li style="display: none;"></li>
+            <li style="display: none;"></li>
+        </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="../packages/slider/js/unslider.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.slider')
+            .on('unslider.ready', function() {
+                $(this).find('li').show();
+            })
+            .unslider({
+                autoplay: true,
+                arrows: false,
+                infinite: true
+            });
+    });
+    </script>
 </body>
 
 </html>
