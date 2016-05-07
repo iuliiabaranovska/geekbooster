@@ -393,7 +393,7 @@ header {
     padding: 1em 1.5em 0 2em; }
   header .headermenu {
     display: flex;
-    width: 72em;
+    width: 112em;
     margin: 0 auto 0 auto;
     flex-direction: row;
     flex-wrap: nowrap; }
@@ -443,5 +443,29 @@ div.slider {
     background: url("../images/main/presentation1.png") top center no-repeat;
     background-size: cover;
     height: 40em; }
+  div.slider ul > li > div.motto {
+    width: 8em;
+    margin: 0 auto 0 92px;
+    margin-top: 3.5em;
+    text-transform: uppercase;
+    text-align: left;
+    font: 100% "FiraSansRegular", sans-serif;
+    color: #ffffff;
+    font-size: xx-large;
+    line-height: 1.3em; }
+  div.slider ul > li > button {
+    height: 1.7em;
+    margin: 0 auto 0 92px;
+    margin-top: 1.5em;
+    text-transform: uppercase;
+    font: 100% "Aliquam", sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ffffff;
+    background-color: #e24f39;
+    font-size: medium;
+    line-height: 1.3em;
+    border: 0px;
+    border-radius: 3px; }
 
 /*# sourceMappingURL=index.css.map */

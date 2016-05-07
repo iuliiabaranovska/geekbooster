@@ -17,8 +17,9 @@
 
 $caption-font: "RobotoSlabRegular",
 sans-serif;
-$caption-color: #ffffff;
 $text-font: "FiraSansRegular",
+sans-serif;
+$aliquam-font: "Aliquam",
 sans-serif;
 $text-color: #ffffff;
 $main-color: #e24f39;
@@ -42,7 +43,7 @@ body {
 @mixin item {
     text-decoration: none;
     text-transform: uppercase;
-    color: $caption-color;
+    color: $text-color;
     font-size: small;
     line-height: 6;
     margin-right: 1em;
@@ -50,7 +51,7 @@ body {
 }
 
 @mixin layout {
-    width: 72em;
+    width: 112em;
     margin: 0 auto 0 auto;
 }
 
@@ -114,5 +115,31 @@ div.slider {
         background: url("../images/main/presentation1.png") top center no-repeat;
         background-size: cover;
         height: 40em;
+    }
+    ul>li>div.motto {
+        width: 8em;
+        margin: 0 auto 0 92px;
+        margin-top: 3.5em;
+        text-transform: uppercase;
+        text-align: left;
+        font: 100% $text-font;
+        color: $text-color;
+        font-size: xx-large;
+        line-height: 1.3em;
+    }
+    ul>li>button {
+        height: 1.7em;
+        margin: 0 auto 0 92px;
+        margin-top: 1.5em;
+        text-transform: uppercase;
+        font: 100% $aliquam-font;
+        font-weight: bold;
+        letter-spacing: 2px;
+        color: $text-color;
+        background-color: $main-color;
+        font-size: medium;
+        line-height: 1.3em;
+        border: 0px;
+        border-radius: 3px;
     }
 }
