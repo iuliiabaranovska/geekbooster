@@ -33,11 +33,14 @@ body {
     font: 100% $text-font;
     font-size: small;
     color: $text-color;
+    display: flex;
+    flex-direction: row;
+    background-color:$background-color;
 }
 
 @mixin logo {
     height: 3em;
-    padding: 1em 1.5em 0 2em;
+    padding: 1.5em 2em 0 2.5em;
 }
 
 @mixin item {
@@ -50,9 +53,36 @@ body {
     flex: 1;
 }
 
-@mixin layout {
-    width: 112em;
+.layout {
+    width: 76em;
     margin: 0 auto 0 auto;
+}
+
+.slider-layout {
+    width: 93em;
+    margin: 0 auto 0 auto;
+}
+
+.space {
+    background-color: $background-color;
+    flex-grow: 1;
+    width: 92px;
+    height: 100%;
+    margin: 0;
+}
+
+.logo {
+    @include logo;
+}
+
+content {
+    flex-grow: 2;
+    width: calc(100% - 92px - 92px);
+    margin: 0 auto 0 auto;
+}
+
+.slider-margin{
+	margin: 0 -92px 0 -92px;
 }
 
 header {
@@ -62,12 +92,8 @@ header {
     font-size: medium;
     display: flex;
     flex-direction: row;
-    object.logo {
-        @include logo;
-    }
     .headermenu {
         display: flex;
-        @include layout;
         flex-direction: row;
         flex-wrap: nowrap;
         div.start-items {
@@ -116,9 +142,8 @@ div.slider {
         background-size: cover;
         height: 40em;
     }
-    ul>li>div.motto {
+    p.motto {
         width: 8em;
-        margin: 0 auto 0 92px;
         margin-top: 3.5em;
         text-transform: uppercase;
         text-align: left;
@@ -127,9 +152,8 @@ div.slider {
         font-size: xx-large;
         line-height: 1.3em;
     }
-    ul>li>button {
+    button {
         height: 1.7em;
-        margin: 0 auto 0 92px;
         margin-top: 1.5em;
         text-transform: uppercase;
         font: 100% $aliquam-font;

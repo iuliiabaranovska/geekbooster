@@ -379,7 +379,37 @@ body {
   height: 100%;
   font: 100% "FiraSansRegular", sans-serif;
   font-size: small;
-  color: #ffffff; }
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  background-color: #323743; }
+
+.layout {
+  width: 76em;
+  margin: 0 auto 0 auto; }
+
+.slider-layout {
+  width: 93em;
+  margin: 0 auto 0 auto; }
+
+.space {
+  background-color: #323743;
+  flex-grow: 1;
+  width: 92px;
+  height: 100%;
+  margin: 0; }
+
+.logo {
+  height: 3em;
+  padding: 1.5em 2em 0 2.5em; }
+
+content {
+  flex-grow: 2;
+  width: calc(100% - 92px - 92px);
+  margin: 0 auto 0 auto; }
+
+.slider-margin {
+  margin: 0 -92px 0 -92px; }
 
 header {
   height: 5em;
@@ -388,13 +418,8 @@ header {
   font-size: medium;
   display: flex;
   flex-direction: row; }
-  header object.logo {
-    height: 3em;
-    padding: 1em 1.5em 0 2em; }
   header .headermenu {
     display: flex;
-    width: 112em;
-    margin: 0 auto 0 auto;
     flex-direction: row;
     flex-wrap: nowrap; }
     header .headermenu div.start-items {
@@ -443,9 +468,8 @@ div.slider {
     background: url("../images/main/presentation1.png") top center no-repeat;
     background-size: cover;
     height: 40em; }
-  div.slider ul > li > div.motto {
+  div.slider p.motto {
     width: 8em;
-    margin: 0 auto 0 92px;
     margin-top: 3.5em;
     text-transform: uppercase;
     text-align: left;
@@ -453,9 +477,8 @@ div.slider {
     color: #ffffff;
     font-size: xx-large;
     line-height: 1.3em; }
-  div.slider ul > li > button {
+  div.slider button {
     height: 1.7em;
-    margin: 0 auto 0 92px;
     margin-top: 1.5em;
     text-transform: uppercase;
     font: 100% "Aliquam", sans-serif;
