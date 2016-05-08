@@ -468,6 +468,10 @@ div.slider {
     background: url("../images/main/presentation1.png") top center no-repeat;
     background-size: cover;
     height: 40em; }
+  div.slider ul > li:not(:first-child) {
+    display: none; }
+  div.slider ul > li > div {
+    margin: 0 92px 0 92px; }
   div.slider p.motto {
     width: 8em;
     margin-top: 3.5em;

@@ -35,7 +35,7 @@ body {
     color: $text-color;
     display: flex;
     flex-direction: row;
-    background-color:$background-color;
+    background-color: $background-color;
 }
 
 @mixin logo {
@@ -81,8 +81,8 @@ content {
     margin: 0 auto 0 auto;
 }
 
-.slider-margin{
-	margin: 0 -92px 0 -92px;
+.slider-margin {
+    margin: 0 -92px 0 -92px;
 }
 
 header {
@@ -141,6 +141,12 @@ div.slider {
         background: url("../images/main/presentation1.png") top center no-repeat;
         background-size: cover;
         height: 40em;
+    }
+    ul>li:not(:first-child) {
+        display: none;
+    }
+    ul>li>div {
+        margin: 0 92px 0 92px;
     }
     p.motto {
         width: 8em;
