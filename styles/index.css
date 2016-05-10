@@ -392,7 +392,7 @@ body {
   background-color: #323743;
   flex-grow: 1;
   width: 92px;
-  height: 100%;
+  height: 49em;
   margin: 0; }
 
 .logo {
@@ -407,6 +407,9 @@ content {
 .slider-margin {
   margin: 0 -92px 0 -92px; }
 
+.slider-padding {
+  padding: 0 12em 0 12em; }
+
 .button {
   height: 1.7em;
   margin-top: 1.5em;
@@ -416,7 +419,7 @@ content {
   letter-spacing: 2px;
   color: #ffffff;
   background-color: #e24f39;
-  font-size: 85%;
+  font-size: 1.3em;
   line-height: 1.3em;
   border: 0px;
   border-radius: 3px; }
@@ -487,7 +490,9 @@ div.slider {
     line-height: 1.3; }
 
 .options {
-  display: flex; }
+  display: flex;
+  margin-top: 4em;
+  margin-bottom: 7em; }
   .options .option-column {
     flex-grow: 1; }
   .options article {
@@ -496,20 +501,46 @@ div.slider {
   .options article > object {
     height: 9em;
     margin-top: 1.5em; }
+  .options article.top-fix {
+    margin-top: 1.8em; }
   .options article.top-fix > object {
     margin-right: -1em; }
   .options article > section {
     margin-left: 1.5em;
     margin-right: 1.5em;
     text-decoration: none; }
+  .options article > section > .button {
+    font-size: 1em; }
   .options p {
     font-size: 90%; }
+
+.about {
+  text-align: center;
+  background: url("../images/main/about.png") top center no-repeat;
+  background-size: cover;
+  padding-bottom: 2em;
+  font-size: 90%; }
+  .about h1 {
+    font-family: "FiraSansRegular", sans-serif;
+    font-weight: normal;
+    color: #e24f39;
+    text-transform: uppercase; }
+  .about h2 {
+    font-family: "Aliquam", sans-serif;
+    text-transform: uppercase;
+    font-size: 80%;
+    margin-top: -20px;
+    letter-spacing: 0.15em; }
+  .about p {
+    font-family: "FiraSansRegular", sans-serif; }
+  .about object.logo {
+    height: 4em; }
 
 @media (max-width: 999px) {
   .options {
     flex-direction: column; }
     .options article > object {
-      width: 8em; }
+      width: 8.8em; }
     .options article.reverse {
       flex-direction: row-reverse; }
     .options article.top-fix > object {
@@ -528,6 +559,6 @@ div.slider {
     margin-top: 4.7em; } }
 @media (min-width: 1224px) and (max-width: 1263px) {
   .options article.top-fix {
-    margin-top: 3.8em; } }
+    margin-top: 3.6em; } }
 
 /*# sourceMappingURL=index.css.map */
