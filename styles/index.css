@@ -460,8 +460,12 @@ header {
       margin-right: 1em;
       border-bottom: solid 3px #e24f39;
       height: 3%; }
+    header .headermenu a.item:hover {
+      color: #c2bdbd; }
     header .headermenu a.item.orange {
       color: #e24f39; }
+    header .headermenu a.item.orange:hover {
+      color: #bf5949; }
     header .headermenu object.search {
       height: 1em; }
 
@@ -562,6 +566,8 @@ footer {
     line-height: 0.9em; }
   footer a.item {
     text-transform: none; }
+  footer a.item:hover {
+    color: #c2bdbd; }
   footer p {
     margin: 0em; }
   footer form label {
@@ -577,6 +583,8 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: flex-start; }
+  .soc-share a {
+    cursor: pointer; }
   .soc-share object {
     padding: 1em 1em 0 0 !important; }
 

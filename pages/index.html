@@ -18,7 +18,7 @@
             <div class="headermenu layout">
                 <div class="start-items">
                     <span><a class="item" href="#"> Projects </a></span>
-                    <span><a class="item" href="#"> | </a></span>
+                    <span class="item"> | </span>
                     <span><a class="item" href="#"><object class="search" data="../images/header/search.svg" type="image/svg+xml"></object></a></span>
                 </div>
                 <!-- <div class="empty"></div> -->
@@ -26,7 +26,7 @@
                     <span><a class="item" href="#"> About </a></span>
                     <span><a class="item" href="#"> Teams </a></span>
                     <span><a class="item" href="#"> Contacts </a></span>
-                    <span><a class="item" href="#"> | </a></span>
+                    <span class="item"> | </span>
                     <span><a class="item orange" href="#"> Sign up </a></span>
                     <span><a class="item orange" href="#"> Log in </a></span>
                 </div>
@@ -166,8 +166,14 @@
                     <input type="email" id="email"></input>
                     <button class="button" type="submit">Subscribe</button>
                     <div class="soc-share">
-                        <a onclick="Share.facebook('URL','TITLE','IMG_PATH','DESC')"><object class="logo" data="../images/footer/fb.svg" type="image/svg+xml"></object></a>
-                        <a onclick="Share.twitter('URL','TITLE')"> <object class="logo" data="../images/footer/tw.svg" type="image/svg+xml"></object></a>
+                        <a href="http://www.facebook.com/sharer/sharer.php?s=100&p%5Btitle%5D=TITLE&p%5Bsummary%5D=DESC&p%5Burl%5D=URL&p%5Bimages%5D%5B0%5D=IMG_PATH" target="_blank" 
+                        onclick="return GeekBooster.Share.me(this);">
+                            <object class="logo" data="../images/footer/fb.svg" type="image/svg+xml"></object>
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Ffiddle.jshell.net%2F_display%2F&text=TITLE&url=URL" target="_blank" 
+                        onclick="return GeekBooster.Share.me(this);">
+                            <object class="logo" data="../images/footer/tw.svg" type="image/svg+xml"></object>
+                        </a>
                         <object class="logo" data="../images/footer/g+.svg" type="image/svg+xml"></object>
                     </div>
                 </form>
@@ -177,6 +183,7 @@
     <div class="space"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="../packages/slider/js/unslider.js"></script>
+    <script src="../scripts/main.js"></script>
     <script>
     $(document).ready(function() {
         $('.slider')
