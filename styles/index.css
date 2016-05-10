@@ -382,7 +382,8 @@ body {
   color: #ffffff;
   display: flex;
   flex-direction: row;
-  background-color: #323743; }
+  background-color: #323743;
+  overflow: scroll; }
 
 .layout {
   width: 81%;
@@ -403,6 +404,13 @@ content {
   flex-grow: 2;
   width: calc(100% - 92px - 92px);
   margin: 0 auto 0 auto; }
+
+.item {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 90%;
+  margin-right: 1em; }
 
 .slider-margin {
   margin: 0 -92px 0 -92px; }
@@ -444,12 +452,6 @@ header {
       align-items: flex-end; }
       header .headermenu div.end-items span:last-child > a {
         margin-right: 0; }
-    header .headermenu a.item {
-      text-decoration: none;
-      text-transform: uppercase;
-      color: #ffffff;
-      font-size: 90%;
-      margin-right: 1em; }
     header .headermenu a.item:active {
       text-decoration: none;
       text-transform: uppercase;
@@ -472,7 +474,7 @@ div.slider {
     margin: 0;
     padding: 0; }
   div.slider ul > li {
-    background: url("../images/main/presentation1.png") top center no-repeat;
+    background: url("../images/slider/presentation1.png") top center no-repeat;
     background-size: cover;
     height: 35em; }
   div.slider ul > li:not(:first-child) {
@@ -513,6 +515,8 @@ div.slider {
     font-size: 1em; }
   .options p {
     font-size: 90%; }
+  .options h2 {
+    font-weight: normal; }
 
 .about {
   text-align: center;
@@ -536,6 +540,46 @@ div.slider {
   .about object.logo {
     height: 4em; }
 
+footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  font-size: 90%;
+  margin-top: 3em !important;
+  overflow: hidden; }
+  footer article {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4em; }
+  footer h1,
+  footer h3 {
+    margin: 0.2em 0;
+    font-family: "FiraSansRegular", sans-serif;
+    font-weight: normal;
+    line-height: 0.9em; }
+  footer a.item {
+    text-transform: none; }
+  footer p {
+    margin: 0em; }
+  footer form label {
+    display: block;
+    font-family: "FiraSansRegular", sans-serif; }
+  footer form input,
+  footer form .button {
+    margin: 0em;
+    font-size: 0.7em;
+    border-radius: 3px; }
+
+.soc-share {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; }
+  .soc-share object {
+    padding: 1em 1em 0 0 !important; }
+
 @media (max-width: 999px) {
   .options {
     flex-direction: column; }
@@ -544,7 +588,10 @@ div.slider {
     .options article.reverse {
       flex-direction: row-reverse; }
     .options article.top-fix > object {
-      margin-right: 0em; } }
+      margin-right: 0em; }
+
+  footer {
+    overflow: hidden; } }
 @media (min-width: 1000px) and (max-width: 1086px) {
   .options article.top-fix {
     margin-top: 3em; } }
