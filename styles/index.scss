@@ -174,7 +174,6 @@ div.slider {
 
 .options {
     display: flex;
-    //flex-wrap: nowrap;
     .option-column {
         flex-grow: 1;
     }
@@ -201,9 +200,18 @@ div.slider {
 
 @media (max-width: 999px) {
     .options {
-    	flex-direction: column;
-        article.top-fix {
-            margin-top: 4em;            
+        flex-direction: column;
+        // article.top-fix {
+        //     margin-top: 4em;
+        // }
+        article>object {
+            width: 8em;
+        }
+        article.reverse {
+            flex-direction: row-reverse;
+        }
+        article.top-fix>object {
+            margin-right: 0em;
         }
     }
 }
@@ -247,5 +255,3 @@ div.slider {
         }
     }
 }
-
-

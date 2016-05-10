@@ -508,8 +508,12 @@ div.slider {
 @media (max-width: 999px) {
   .options {
     flex-direction: column; }
-    .options article.top-fix {
-      margin-top: 4em; } }
+    .options article > object {
+      width: 8em; }
+    .options article.reverse {
+      flex-direction: row-reverse; }
+    .options article.top-fix > object {
+      margin-right: 0em; } }
 @media (min-width: 1000px) and (max-width: 1086px) {
   .options article.top-fix {
     margin-top: 3em; } }
