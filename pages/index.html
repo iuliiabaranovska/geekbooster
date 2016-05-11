@@ -166,15 +166,14 @@
                     <input type="email" id="email"></input>
                     <button class="button" type="submit">Subscribe</button>
                     <div class="soc-share">
-                        <a href="http://www.facebook.com/sharer/sharer.php?s=100&p%5Btitle%5D=TITLE&p%5Bsummary%5D=DESC&p%5Burl%5D=URL&p%5Bimages%5D%5B0%5D=IMG_PATH" target="_blank" 
-                        onclick="return GeekBooster.Share.me(this);">
+                        <a id="fbshare">
                             <object class="logo" data="../images/footer/fb.svg" type="image/svg+xml"></object>
                         </a>
-                        <a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Ffiddle.jshell.net%2F_display%2F&text=TITLE&url=URL" target="_blank" 
-                        onclick="return GeekBooster.Share.me(this);">
+                        <a id="twshare">
                             <object class="logo" data="../images/footer/tw.svg" type="image/svg+xml"></object>
                         </a>
-                        <object class="logo" data="../images/footer/g+.svg" type="image/svg+xml"></object>
+                        <a id="gshare"><object class="logo" data="../images/footer/g+.svg" type="image/svg+xml"></object>
+                        </a>
                     </div>
                 </form>
             </article>
@@ -183,9 +182,15 @@
     <div class="space"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="../packages/slider/js/unslider.js"></script>
-    <script src="../scripts/main.js"></script>
+    <script src="../scripts/share.js"></script>
+    <script src="../scripts/index/indexView.js"></script>
+    <script src="../scripts/index/indexController.js"></script>
     <script>
     $(document).ready(function() {
+        console.log(GeekBooster.IndexController);
+        GeekBooster.IndexController.initialize();
+        
+
         $('.slider')
             .on('unslider.ready', function() {
                 $(this).find('li').show().end().parent().addClass("slider-margin");
