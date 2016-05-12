@@ -172,7 +172,8 @@
                         <a id="twshare">
                             <object class="logo" data="../images/footer/tw.svg" type="image/svg+xml"></object>
                         </a>
-                        <a id="gshare"><object class="logo" data="../images/footer/g+.svg" type="image/svg+xml"></object>
+                        <a id="ggshare">
+                            <object class="logo" data="../images/footer/g+.svg" type="image/svg+xml"></object>
                         </a>
                     </div>
                 </form>
@@ -187,20 +188,8 @@
     <script src="../scripts/index/indexController.js"></script>
     <script>
     $(document).ready(function() {
-        console.log(GeekBooster.IndexController);
-        GeekBooster.IndexController.initialize();
-        
-
-        $('.slider')
-            .on('unslider.ready', function() {
-                $(this).find('li').show().end().parent().addClass("slider-margin");
-            })
-            .unslider({
-                //autoplay: true,
-                arrows: false,
-                infinite: true,
-                delay: 4000
-            });
+        GeekBooster.IndexView.slide();
+        GeekBooster.IndexController.initialize();        
     });
     </script>
 </body>
