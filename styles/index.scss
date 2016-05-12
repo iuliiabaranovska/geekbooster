@@ -97,7 +97,7 @@ content {
     text-transform: uppercase;
     font: 100% $aliquam-font;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing:  0.05em;;
     color: $text-color;
     background-color: $main-color;
     font-size: 1.3em;
@@ -188,12 +188,17 @@ div.slider {
     display: flex;
     margin-top: 4em;
     margin-bottom: 7em;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     .option-column {
         flex-grow: 1;
     }
     article {
         display: flex;
         margin-top: 2em;
+        margin-right: 1em;
+        width: 40%;
     }
     article>object {
         height: 9em;
@@ -260,7 +265,6 @@ footer {
     article {
         width: 30%;
         display: flex;
-        //flex-groBw: 1;
         flex-direction: column;
         padding-bottom: 4em;
     }
@@ -312,6 +316,9 @@ footer {
         // article.top-fix {
         //     margin-top: 4em;
         // }
+        article{
+            width: 100%;
+        }
         article>object {
             width: 8.8em;
         }
@@ -324,45 +331,5 @@ footer {
     }
     footer {
         overflow: hidden;
-    }
-}
-
-@media (min-width: 1000px) and (max-width: 1086px) {
-    .options {
-        article.top-fix {
-            margin-top: 3em;
-        }
-    }
-}
-
-@media (min-width: 1087px) and (max-width: 1105px) {
-    .options {
-        article.top-fix {
-            margin-top: 2em;
-        }
-    }
-}
-
-@media (min-width: 1106px) and (max-width: 1218px) {
-    .options {
-        article.top-fix {
-            margin-top: 3em;
-        }
-    }
-}
-
-@media (min-width: 1219px) and (max-width: 1223px) {
-    .options {
-        article.top-fix {
-            margin-top: 4.7em;
-        }
-    }
-}
-
-@media (min-width: 1224px) and (max-width: 1263px) {
-    .options {
-        article.top-fix {
-            margin-top: 3.6em;
-        }
     }
 }

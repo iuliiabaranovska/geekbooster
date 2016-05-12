@@ -24,6 +24,8 @@ GeekBooster.IndexController = (function() {
                 .on("click", function() {
                     GeekBooster.Share.google('URL');
                 });
+
+            GeekBooster.IndexView.render();
         }
     };
 }());
