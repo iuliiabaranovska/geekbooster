@@ -605,6 +605,11 @@ footer {
     .options article.top-fix > object {
       margin-right: 0em; }
 
+  .about > div > p {
+    height: 99%;
+    line-height: 1.5em;
+    font-size: 1.2em; }
+
   footer {
     overflow: hidden; } }
 

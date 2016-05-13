@@ -97,7 +97,8 @@ content {
     text-transform: uppercase;
     font: 100% $aliquam-font;
     font-weight: bold;
-    letter-spacing:  0.05em;;
+    letter-spacing: 0.05em;
+    ;
     color: $text-color;
     background-color: $main-color;
     font-size: 1.3em;
@@ -278,7 +279,7 @@ footer {
     a.item {
         text-transform: none;
     }
-    a.item:hover{
+    a.item:hover {
         color: #c2bdbd;
     }
     p {
@@ -316,7 +317,7 @@ footer {
         // article.top-fix {
         //     margin-top: 4em;
         // }
-        article{
+        article {
             width: 100%;
         }
         article>object {
@@ -328,6 +329,11 @@ footer {
         article.top-fix>object {
             margin-right: 0em;
         }
+    }
+    .about>div>p {
+        height: 99%;
+        line-height: 1.5em;
+        font-size: 1.2em;
     }
     footer {
         overflow: hidden;
