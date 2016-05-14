@@ -192,11 +192,7 @@
     <script src="../scripts/index/indexView.js"></script>
     <script src="../scripts/index/indexController.js"></script>
     <script>
-    $(document).ready(function() {
-        var $menuItems = $(".headermenu .end-items");
-        $(".menu-logo").on("click", function() {
-            $menuItems.toggleClass("show-navigation");
-        });
+    $(document).ready(function() {        
         GeekBooster.IndexController.initialize();
     });
     </script>

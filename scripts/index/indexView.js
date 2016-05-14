@@ -15,9 +15,17 @@ GeekBooster.IndexView = (function() {
             });
     };
 
+    var renderNavigation = function() {
+        var $menuItems = $(".headermenu .end-items");
+        $(".menu-logo").on("click", function() {
+            $menuItems.toggleClass("show-navigation");
+        });
+    };
+
     return {
         render: function() {
             renderSlider();
+            renderNavigation();
         },
         fbshare: function() {
             return $('#fbshare');
