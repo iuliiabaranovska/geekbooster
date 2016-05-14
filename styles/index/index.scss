@@ -345,12 +345,18 @@ footer {
                 text-transform: uppercase;
                 visibility: visible;
                 width: 100%;
-                padding-top: 2.8em;
+                padding-top: 2.3em;
                 margin-right: 1em;
             }
             .end-items {
-                visibility: hidden;
-                width: 0;
+                visibility: hidden;                
+                height: 0;
+                opacity: 0;
+                transition: all 1s ease;
+                flex-direction: column;
+                width: 100%;
+                justify-content: flex-start;
+                align-items: flex-end;
                 li {
                     background-color: $background-color;
                     width: 20%;
@@ -365,12 +371,10 @@ footer {
                 }
             }
             .show-navigation {
-                width: 100%;
                 visibility: visible;
-                flex-direction: column;
+                height: 3em;
+                opacity: 1;
                 z-index: 10000;
-                justify-content: flex-start;
-                align-items: flex-end;
             }
             .item {
                 width: 100%;
