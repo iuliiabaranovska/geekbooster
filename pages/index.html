@@ -16,20 +16,27 @@
     <content>
         <header>
             <div class="headermenu layout">
-                <div class="start-items">
-                    <span><a class="item" href="#"> Projects </a></span>
+                <ul class="start-items">
+                    <li><a class="item" href="#"> Projects </a></li>
                     <span class="item"> | </span>
-                    <span><a class="item" href="#"><object class="search" data="../images/header/search.svg" type="image/svg+xml"></object></a></span>
-                </div>
+                    <li>
+                        <a class="item" href="#">
+                            <object class="search" data="../images/header/search.svg" type="image/svg+xml"></object>
+                        </a>
+                    </li>
+                </ul>
                 <!-- <div class="empty"></div> -->
-                <div class="end-items">
-                    <span><a class="item" href="#"> About </a></span>
-                    <span><a class="item" href="#"> Teams </a></span>
-                    <span><a class="item" href="#"> Contacts </a></span>
-                    <span class="item"> | </span>
-                    <span><a class="item orange" href="#"> Sign up </a></span>
-                    <span><a class="item orange" href="#"> Log in </a></span>
-                </div>
+                <nav>
+                    <div class="menu-logo">Menu</div>
+                    <ul class="end-items">
+                        <li><a class="item" href="#"> About </a></li>
+                        <li><a class="item" href="#"> Teams </a></li>
+                        <li><a class="item" href="#"> Contacts </a></li>
+                        <span class="item"> | </span>
+                        <li><a class="item orange" href="#"> Sign up </a></li>
+                        <li><a class="item orange" href="#"> Log in </a></li>
+                    </ul>
+                </nav>
             </div>
         </header>
         <div class="slider">
@@ -184,6 +191,10 @@
     <script src="../scripts/index/indexController.js"></script>
     <script>
     $(document).ready(function() {
+        var $menuItems = $(".headermenu .end-items");
+        $(".menu-logo").on("click", function() {
+            $menuItems.toggleClass("show-navigation");
+        });
         GeekBooster.IndexController.initialize();
     });
     </script>
