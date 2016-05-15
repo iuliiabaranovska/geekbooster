@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Geek Booster</title>    
+    <title>Geek Booster</title>
     <link rel="stylesheet" type="text/css" href="../styles/index/index.css">
 </head>
 
@@ -39,11 +39,8 @@
                 </nav>
             </div>
         </header>
-
         <content>
-        	
         </content>
-        
         <footer class="layout">
             <article>
                 <h1>Projects</h1>
@@ -103,12 +100,18 @@
     </content>
     <div class="space"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="../scripts/namespace.js"></script>
     <script src="../scripts/share.js"></script>
+    <script src="../scripts/model/projectsModel.js"></script>
+    <script src="../scripts/services/projectService.js"></script>
     <script src="../scripts/view/projectsView.js"></script>
     <script src="../scripts/controller/projectsController.js"></script>
     <script>
-    $(document).ready(function() {        
-        GeekBooster.ProjectsController.initialize();
+    $(document).ready(function() {
+
+        var controller = GeekBooster.Controller.ProjectsController;
+
+        controller.initialize();
     });
     </script>
 </body>
