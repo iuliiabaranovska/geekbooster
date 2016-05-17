@@ -1,31 +1,23 @@
-var GeekBooster = GeekBooster || {};
+(function() {
 
-GeekBooster.IndexController = (function() {
+    var controller = extend("GeekBooster.Controller"),
+        indexView = GeekBooster.View.IndexView,
+        share = GeekBooster.Share;
 
-    return {
+    controller.IndexController = {
         initialize: function() {
-            GeekBooster
-                .IndexView
-                .fbshare()
-                .on("click", function() {
-                    GeekBooster.Share.facebook('URL', 'TITLE', 'IMG_PATH', 'DESC');
-                });
 
-            GeekBooster
-                .IndexView
-                .twshare()
-                .on("click", function() {
-                    GeekBooster.Share.twitter('URL', 'TITLE');
-                });
+            indexView.fbshare()
+                .on("click", function() { share.facebook('URL', 'TITLE', 'IMG_PATH', 'DESC'); });
 
-            GeekBooster
-                .IndexView
-                .ggshare()
-                .on("click", function() {
-                    GeekBooster.Share.google('URL');
-                });
+            indexView.twshare()
+                .on("click", function() { share.twitter('URL', 'TITLE'); });
 
-            GeekBooster.IndexView.render();
+            indexView.ggshare()
+                .on("click", function() { share.google('URL'); });
+
+            indexView.render();
         }
     };
+
 }());

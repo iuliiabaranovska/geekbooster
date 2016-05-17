@@ -1,8 +1,8 @@
-var GeekBooster = GeekBooster || {};
+(function() {
 
-GeekBooster.IndexView = (function() {
+    var view = extend("GeekBooster.View");
 
-    var renderSlider = function() {
+    function renderSlider() {
         $('.slider')
             .on('unslider.ready', function() {
                 $(this).find('li').show().end().parent().addClass("slider-margin");
@@ -15,14 +15,14 @@ GeekBooster.IndexView = (function() {
             });
     };
 
-    var renderNavigation = function() {
+    function renderNavigation() {
         var $menuItems = $(".headermenu .end-items");
         $(".menu-logo").on("click", function() {
             $menuItems.toggleClass("show-navigation");
         });
     };
 
-    return {
+    view.IndexView = {
         render: function() {
             renderSlider();
             renderNavigation();
@@ -37,4 +37,5 @@ GeekBooster.IndexView = (function() {
             return $('#ggshare');
         }
     };
+
 }());
