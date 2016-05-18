@@ -2,22 +2,18 @@
 
     var controller = extend("GeekBooster.Controller"),
         view = GeekBooster.View.IndexView,
-        share = GeekBooster.Share;
+        base = controller.BaseController,
+        self = Object.create(base);
 
-    controller.IndexController = {
-        initialize: function() {
+    self.initialize = function() {
 
-            view.fbshare()
-                .on("click", function() { share.facebook('URL', 'TITLE', 'IMG_PATH', 'DESC'); });
+        view.fbshare().on("click", base.shareFacebook);
+        view.twshare().on("click", base.shareTwitter);
+        view.ggshare().on("click", base.shareGoogle);
 
-            view.twshare()
-                .on("click", function() { share.twitter('URL', 'TITLE'); });
+        view.render();
+    }
 
-            view.ggshare()
-                .on("click", function() { share.google('URL'); });
-
-            view.render();
-        }
-    };
+    controller.IndexController = self;
 
 }());
