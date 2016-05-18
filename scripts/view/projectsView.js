@@ -1,27 +1,9 @@
 (function() {
 
-    var view = extend("GeekBooster.View");
+    var view = extend("GeekBooster.View"),
+        base = view.BaseView,
+        self = Object.create(base);
 
-    function renderNavigation() {
-        var $menuItems = $(".headermenu .end-items");
-        $(".menu-logo").on("click", function() {
-            $menuItems.toggleClass("show-navigation");
-        });
-    };
-
-    view.ProjectsView = {
-        render: function() {
-            renderNavigation();
-        },
-        fbshare: function() {
-            return $('#fbshare');
-        },
-        twshare: function() {
-            return $('#twshare');
-        },
-        ggshare: function() {
-            return $('#ggshare');
-        }
-    };
+    view.ProjectsView = self;
 
 }());
