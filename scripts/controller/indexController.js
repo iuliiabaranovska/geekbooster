@@ -7,9 +7,9 @@
 
     self.initialize = function() {
 
-        view.fbshare().on("click", base.shareFacebook);
-        view.twshare().on("click", base.shareTwitter);
-        view.ggshare().on("click", base.shareGoogle);
+        view.onShareFacebook.attach(base.shareFacebook);
+        view.onShareTwitter.attach(base.shareTwitter);
+        view.onShareGoogle.attach(base.shareGoogle);
 
         view.render();
     }

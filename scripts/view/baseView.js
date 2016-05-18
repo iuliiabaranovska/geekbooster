@@ -1,6 +1,8 @@
 (function() {
 
-    var view = extend("GeekBooster.View");
+    var view = extend("GeekBooster.View"),
+        Event = GeekBooster.Event,
+        self = {};
 
     function renderNavigation() {
         var $menuItems = $(".headermenu .end-items");
@@ -9,19 +11,18 @@
         });
     };
 
-    view.BaseView = {
-        render: function() {
-            renderNavigation();
-        },
-        fbshare: function() {
-            return $('#fbshare');
-        },
-        twshare: function() {
-            return $('#twshare');
-        },
-        ggshare: function() {
-            return $('#ggshare');
-        }
+    $('#fbshare').on("click", function() { self.onShareFacebook.notify(); });
+    $('#twshare').on("click", function() { self.onShareTwitter.notify(); });
+    $('#ggshare').on("click", function() { self.onShareGoogle.notify(); });
+
+    self.render = function() {
+        renderNavigation();
     };
+
+    self.onShareFacebook = new Event(self);
+    self.onShareTwitter = new Event(self);
+    self.onShareGoogle = new Event(self);
+
+    view.BaseView = self;
 
 }());
