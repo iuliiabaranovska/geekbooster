@@ -1,34 +1,24 @@
 (function() {
 
-    var Controller = extend("GeekBooster.Controller");
+    var controller = extend("GeekBooster.Controller"),
+        view = GeekBooster.View.ProjectsView,
+        share = GeekBooster.Share,
+        projectService = new GeekBooster.Services.ProjectService();
 
-    Controller.ProjectsController = (function() {
+    controller.ProjectsController = {
+        initialize: function() {
 
-        var view = GeekBooster.View.ProjectsView,
-            projectService = new GeekBooster.Services.ProjectService();
+            view.fbshare()
+                .on("click", function() { share.facebook('URL', 'TITLE', 'IMG_PATH', 'DESC'); });
 
-        return {
-            initialize: function() {
-                view.fbshare()
-                    .on("click", function() {
-                        GeekBooster.Share.facebook('URL', 'TITLE', 'IMG_PATH', 'DESC');
-                    });
+            view.twshare()
+                .on("click", function() { share.twitter('URL', 'TITLE'); });
 
-                view.twshare()
-                    .on("click", function() {
-                        GeekBooster.Share.twitter('URL', 'TITLE');
-                    });
+            view.ggshare()
+                .on("click", function() { share.google('URL'); });
 
-                view.ggshare()
-                    .on("click", function() {
-                        GeekBooster.Share.google('URL');
-                    });
-
-                view.render();
-
-                console.log(projectService.getAll());
-            }
-        };
-    }());
+            view.render();
+        }
+    };
 
 }());

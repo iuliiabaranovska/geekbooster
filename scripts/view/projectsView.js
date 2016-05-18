@@ -1,30 +1,27 @@
 (function() {
 
-    var View = extend("GeekBooster.View");
+    var view = extend("GeekBooster.View");
 
-    View.ProjectsView = (function() {
+    function renderNavigation() {
+        var $menuItems = $(".headermenu .end-items");
+        $(".menu-logo").on("click", function() {
+            $menuItems.toggleClass("show-navigation");
+        });
+    };
 
-        var renderNavigation = function() {
-            var $menuItems = $(".headermenu .end-items");
-            $(".menu-logo").on("click", function() {
-                $menuItems.toggleClass("show-navigation");
-            });
-        };
-
-        return {
-            render: function() {
-                renderNavigation();
-            },
-            fbshare: function() {
-                return $('#fbshare');
-            },
-            twshare: function() {
-                return $('#twshare');
-            },
-            ggshare: function() {
-                return $('#ggshare');
-            }
-        };
-    }());
+    view.ProjectsView = {
+        render: function() {
+            renderNavigation();
+        },
+        fbshare: function() {
+            return $('#fbshare');
+        },
+        twshare: function() {
+            return $('#twshare');
+        },
+        ggshare: function() {
+            return $('#ggshare');
+        }
+    };
 
 }());
