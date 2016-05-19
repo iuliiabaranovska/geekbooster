@@ -9,11 +9,38 @@
 </head>
 
 <body>
+    <object class="logo" data="../images/header/logo.svg" type="image/svg+xml"></object>
     <content>
-        <div class="wrapper">
+        <nav class="booster-nav">
+            <div class="headermenu layout">
+                <ul class="start-items">
+                    <li><a class="item" href="projects.html"> Projects </a></li>
+                    <span class="item"> | </span>
+                    <li>
+                        <a class="item" href="#">
+                            <object class="search" data="../images/header/search.svg" type="image/svg+xml"></object>
+                        </a>
+                    </li>
+                </ul>
+                <div class="end-nav">
+                    <div class="menu-logo">
+                        <object class="search" data="../images/header/menu.svg" type="image/svg+xml"></object>
+                    </div>
+                    <ul class="end-items">
+                        <li><a class="item" href="#"> About </a></li>
+                        <li><a class="item" href="#"> Teams </a></li>
+                        <li><a class="item" href="#"> Contacts </a></li>
+                        <span class="item"> | </span>
+                        <li><a class="item orange" href="#"> Sign up </a></li>
+                        <li><a class="item orange" href="#"> Log in </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="content-wrapper">
             <content class="projects layout">
                 <article class="project">
-                    <div class="logo"></div>
+                    <div class="project-logo"></div>
                     <div class="info">
                         <header class="project-header">
                             <div class="column">
@@ -51,6 +78,62 @@
                 </article>
             </content>
         </div>
+        <footer class="layout">
+            <article>
+                <h1>Projects</h1>
+                <a class="item" href="#">nature</a>
+                <a class="item" href="#">medecine</a>
+                <a class="item" href="#">politic</a>
+                <a class="item" href="#">social</a>
+                <a class="item" href="#">tech</a>
+                <a class="item" href="#">charaty</a>
+            </article>
+            <article>
+                <h1>Comunity</h1>
+                <a class="item" href="#">teams</a>
+                <a class="item" href="#">projects</a>
+                <a class="item" href="#">awards</a>
+                <a class="item" href="#">collaboration programs</a>
+            </article>
+            <article>
+                <h1>Contacts</h1>
+                <p>+38 078 567 34 89</p>
+                <p>geekbooster@gb.com</p>
+                <p>Ukraine, Lviv, pl. Rynok 11</p>
+            </article>
+            <article>
+                <h1>About</h1>
+                <a class="item" href="#">Geek Booster</a>
+                <a class="item" href="#">aims</a>
+                <a class="item" href="#">how does it works?</a>
+                <a class="item" href="#">our team</a>
+            </article>
+            <article>
+                <h1>Teams</h1>
+                <a class="item" href="#">about team</a>
+                <a class="item" href="#">team project</a>
+                <a class="item" href="#">aim</a>
+                <a class="item"="#">how does it works?</a>
+            </article>
+            <article class="subscribe">
+                <form action="" method="post">
+                    <h3><label>Subscribe to keep abreast</label></h3>
+                    <input type="email" id="email"></input>
+                    <button class="button" type="submit">Subscribe</button>
+                    <div class="soc-share">
+                        <a id="fbshare">
+                            <object class="logo" data="../images/footer/fb.svg" type="image/svg+xml"></object>
+                        </a>
+                        <a id="twshare">
+                            <object class="logo" data="../images/footer/tw.svg" type="image/svg+xml"></object>
+                        </a>
+                        <a id="ggshare">
+                            <object class="logo" data="../images/footer/g+.svg" type="image/svg+xml"></object>
+                        </a>
+                    </div>
+                </form>
+            </article>
+        </footer>
     </content>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="../scripts/namespace.js"></script>
