@@ -41,7 +41,8 @@ body {
 
 @mixin logo {
     height: 3em;
-    padding: 1.5em 2em 0 2.5em;
+    padding: 1.5em 0 0 2em;
+    z-index: 10;
 }
 
 @mixin item {
@@ -53,19 +54,12 @@ body {
 }
 
 .layout {
-    width: 81%;
+    width: 80%;
     margin: 0 auto 0 auto;
 }
 
-// .slider-layout {
-//     width: 81%;
-//     margin: 0 auto 0 auto;
-// }
 .space {
     background-color: $background-color;
-    flex-grow: 1;
-    width: 92px;
-    height: 49em;
     margin: 0;
 }
 
@@ -74,21 +68,11 @@ body {
 }
 
 content {
-    flex-grow: 2;
-    width: calc(100% - 92px - 92px);
-    margin: 0 auto 0 auto;
+    margin: 0 auto 0 -4.2em;
 }
 
 .item {
     @include item;
-}
-
-.slider-margin {
-    margin: 0 -92px 0 -92px;
-}
-
-.slider-padding {
-    padding: 0 12em 0 12em;
 }
 
 .button {
@@ -107,9 +91,6 @@ content {
     border-radius: 3px;
 }
 
-// div.empty {
-//     width: calc(100% - 44em);
-// }
 header {
     height: 6em;
     background-color: $background-color;
@@ -130,7 +111,6 @@ header {
         }
         .menu-logo {
             display: none;
-            //visibility: hidden;
         }
         .start-items {
             width: 26%;
@@ -191,9 +171,6 @@ div.slider {
     ul>li:not(:first-child) {
         display: none;
     }
-    ul>li>div {
-        margin: 0 92px 0 92px;
-    }
     p.motto {
         width: 9em;
         margin-top: 3.5em;
@@ -219,7 +196,6 @@ div.slider {
     article {
         display: flex;
         margin-top: 2em;
-        margin-right: 1em;
         width: 40%;
     }
     article>object {
@@ -346,10 +322,9 @@ footer {
                 visibility: visible;
                 width: 100%;
                 padding-top: 2em;
-                margin-right: 1em;
             }
             .end-items {
-                visibility: hidden;                
+                visibility: hidden;
                 height: 0;
                 opacity: 0;
                 transition: all 1s ease;
@@ -395,6 +370,9 @@ footer {
         }
         article.top-fix>object {
             margin-right: 0em;
+        }
+        article>section {
+            margin-right: 0;
         }
     }
     .about>div>p {

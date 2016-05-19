@@ -7,10 +7,10 @@
     function renderSlider() {
         $('.slider')
             .on('unslider.ready', function() {
-                $(this).find('li').show().end().parent().addClass("slider-margin");
+                $(this).find('li').show();
             })
             .unslider({
-                autoplay: true,
+                //autoplay: true,
                 arrows: false,
                 infinite: true,
                 delay: 4000

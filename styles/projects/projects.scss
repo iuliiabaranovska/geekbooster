@@ -1,4 +1,9 @@
 @import "../index/index.scss";
+// .wrapper{
+// 	margin-left:-92px;
+// 	margin-right:-92px;
+// 	background-color:#ffffff;
+// }
 .projects {
     display: flex;
     flex-direction: row;
@@ -10,14 +15,14 @@
         flex-direction: row;
         flex-wrap: nowrap;
         .logo {
-            background: url("../../images/projects/spaceman.png") top center;
-            background-size: cover;
-            //flex-grow: 1;
-            width: 65em;
-            height: 6.5em;
+            background: url("../../images/projects/spaceman.png") no-repeat top center;
+            background-size: contain;
+            width: 92vw;
+            height: 64vh;
         }
     }
     .info {
+    	color: black;
         .project-header {
             display: flex;
             flex-direction: row;
@@ -25,6 +30,9 @@
             align-items: flex-start;
             justify-content: flex-start;
             position: relative;
+            p{
+            	margin:0;
+            }
             .column {
                 //width: 30%;
                 font-size: 79%;

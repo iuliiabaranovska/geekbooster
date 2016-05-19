@@ -386,24 +386,20 @@ body {
   overflow: scroll; }
 
 .layout {
-  width: 81%;
+  width: 80%;
   margin: 0 auto 0 auto; }
 
 .space {
   background-color: #323743;
-  flex-grow: 1;
-  width: 92px;
-  height: 49em;
   margin: 0; }
 
 .logo {
   height: 3em;
-  padding: 1.5em 2em 0 2.5em; }
+  padding: 1.5em 0 0 2em;
+  z-index: 10; }
 
 content {
-  flex-grow: 2;
-  width: calc(100% - 92px - 92px);
-  margin: 0 auto 0 auto; }
+  margin: 0 auto 0 -4.2em; }
 
 .item {
   text-decoration: none;
@@ -411,12 +407,6 @@ content {
   color: #ffffff;
   font-size: 90%;
   margin-right: 1em; }
-
-.slider-margin {
-  margin: 0 -92px 0 -92px; }
-
-.slider-padding {
-  padding: 0 12em 0 12em; }
 
 .button {
   height: 1.7em;
@@ -499,8 +489,6 @@ div.slider {
     height: 35em; }
   div.slider ul > li:not(:first-child) {
     display: none; }
-  div.slider ul > li > div {
-    margin: 0 92px 0 92px; }
   div.slider p.motto {
     width: 9em;
     margin-top: 3.5em;
@@ -523,7 +511,6 @@ div.slider {
   .options article {
     display: flex;
     margin-top: 2em;
-    margin-right: 1em;
     width: 40%; }
   .options article > object {
     height: 9em;
@@ -619,8 +606,7 @@ footer {
     text-transform: uppercase;
     visibility: visible;
     width: 100%;
-    padding-top: 2em;
-    margin-right: 1em; }
+    padding-top: 2em; }
   header .headermenu .end-items {
     visibility: hidden;
     height: 0;
@@ -658,6 +644,8 @@ footer {
       flex-direction: row-reverse; }
     .options article.top-fix > object {
       margin-right: 0em; }
+    .options article > section {
+      margin-right: 0; }
 
   .about > div > p {
     height: 99%;

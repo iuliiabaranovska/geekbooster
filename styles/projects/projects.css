@@ -676,41 +676,45 @@ footer {
     flex-direction: row;
     flex-wrap: nowrap; }
     .projects .project .logo {
-      background: url("../../images/projects/spaceman.png") top center;
-      background-size: cover;
-      width: 65em;
-      height: 6.5em; }
-  .projects .info .project-header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: relative; }
-    .projects .info .project-header .column {
-      font-size: 79%;
-      line-height: 1;
-      padding-right: 2em; }
-    .projects .info .project-header .currentBudget,
-    .projects .info .project-header .contributorsAmount {
-      display: inline;
-      font-size: 120%;
-      color: #e24f39; }
-    .projects .info .project-header ul {
-      width: 5.9vw;
-      /* height: 0em; */
-      position: absolute;
-      top: 0em;
-      right: 1em;
-      padding: 0;
-      margin: 0; }
-      .projects .info .project-header ul li {
-        list-style-type: none; }
-        .projects .info .project-header ul li object {
-          width: 100%; }
-  .projects .info .name {
+      background: url("../../images/projects/spaceman.png") no-repeat top center;
+      background-size: contain;
+      width: 92vw;
+      height: 64vh; }
+  .projects .info {
     color: black; }
-  .projects .info .creator {
-    color: #e24f39; }
+    .projects .info .project-header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      justify-content: flex-start;
+      position: relative; }
+      .projects .info .project-header p {
+        margin: 0; }
+      .projects .info .project-header .column {
+        font-size: 79%;
+        line-height: 1;
+        padding-right: 2em; }
+      .projects .info .project-header .currentBudget,
+      .projects .info .project-header .contributorsAmount {
+        display: inline;
+        font-size: 120%;
+        color: #e24f39; }
+      .projects .info .project-header ul {
+        width: 5.9vw;
+        /* height: 0em; */
+        position: absolute;
+        top: 0em;
+        right: 1em;
+        padding: 0;
+        margin: 0; }
+        .projects .info .project-header ul li {
+          list-style-type: none; }
+          .projects .info .project-header ul li object {
+            width: 100%; }
+    .projects .info .name {
+      color: black; }
+    .projects .info .creator {
+      color: #e24f39; }
 
 /*# sourceMappingURL=projects.css.map */

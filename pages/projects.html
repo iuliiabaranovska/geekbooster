@@ -9,11 +9,12 @@
 </head>
 
 <body>
-    <div class="space">
-        <object class="logo" data="../images/header/logo.svg" type="image/svg+xml"></object>
-    </div>
+    
     <content>
         <header>
+        <div class="space">
+        <object class="logo" data="../images/header/logo.svg" type="image/svg+xml"></object>
+    </div>
             <div class="headermenu layout">
                 <ul class="start-items">
                     <li><a class="item" href="projects.html"> Projects </a></li>
@@ -39,46 +40,49 @@
                     </ul>
                 </nav>
             </div>
+            <div class="space"></div>
         </header>
-        <content class="projects layout">
-            <article class="project">
-                <div class="logo"></div>
-                <div class="info">
-                    <header class="project-header">
-                        <div class="column">
-                            <div class="currentBudget">123 789$</div>
-                            <p>of</p>
-                            <div class="totalBudget">800 000$</div>
-                        </div>
-                        <div class="column">
-                            <div class="contributorsAmount">69 people</div>
-                            <p>working on it</p>
-                        </div>
-                        <ul class="labels column">
-                            <li>
-                                <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                            </li>
-                            <li>
-                                <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                            </li>
-                            <li>
-                                <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                            </li>
+        <div class="wrapper">
+            <content class="projects layout">
+                <article class="project">
+                    <div class="logo"></div>
+                    <div class="info">
+                        <header class="project-header">
+                            <div class="column">
+                                <div class="currentBudget">123 789$</div>
+                                <p>of</p>
+                                <div class="totalBudget">800 000$</div>
+                            </div>
+                            <div class="column">
+                                <div class="contributorsAmount">69 people</div>
+                                <p>working on it</p>
+                            </div>
+                            <ul class="labels column">
+                                <li>
+                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
+                                </li>
+                                <li>
+                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
+                                </li>
+                                <li>
+                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
+                                </li>
+                            </ul>
+                        </header>
+                        <h2 class="name">Garold's space odisea</h2>
+                        <h3 class="creator">by Julia Baranovska</h3>
+                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed purus libero, iaculis ac arcu nec, pretium fringilla magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec et urna faucibus, lobortis elit sed, blandit sem. Nulla facilisi. Nam dignissim scelerisque odio ac venenatis. Pellentesque in mollis risus. Morbi tempor sodales sodales. Nulla fringilla, sapien ac finibus commodo, dui tortor porta leo, quis sollicitudin mauris neque eget sem. Phasellus id nulla ut arcu eleifend porttitor sed ut dolor. Praesent elit dolor, euismod ac consequat vitae, consectetur nec nisi. Pellentesque nec nisi non lectus vestibulum vulputate. Mauris nec hendrerit magna. Maecenas quis tincidunt augue. Duis ornare fringilla lobortis.</div>
+                        <div class="progress">Progress: 48%</div>
+                        <ul class="tags">
+                            <li>#space</li>
+                            <li>#space</li>
+                            <li>#space</li>
                         </ul>
-                    </header>
-                    <h2 class="name">Garold's space odisea</h2>
-                    <h3 class="creator">by Julia Baranovska</h3>
-                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed purus libero, iaculis ac arcu nec, pretium fringilla magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec et urna faucibus, lobortis elit sed, blandit sem. Nulla facilisi. Nam dignissim scelerisque odio ac venenatis. Pellentesque in mollis risus. Morbi tempor sodales sodales. Nulla fringilla, sapien ac finibus commodo, dui tortor porta leo, quis sollicitudin mauris neque eget sem. Phasellus id nulla ut arcu eleifend porttitor sed ut dolor. Praesent elit dolor, euismod ac consequat vitae, consectetur nec nisi. Pellentesque nec nisi non lectus vestibulum vulputate. Mauris nec hendrerit magna. Maecenas quis tincidunt augue. Duis ornare fringilla lobortis.</div>
-                    <div class="progress">Progress: 48%</div>
-                    <ul class="tags">
-                        <li>#space</li>
-                        <li>#space</li>
-                        <li>#space</li>
-                    </ul>
-                    <button class="more-btn">+</button>
-                </div>
-            </article>            
-        </content>
+                        <button class="more-btn">+</button>
+                    </div>
+                </article>
+            </content>
+        </div>
         <footer class="layout">
             <article>
                 <h1>Projects</h1>
@@ -136,7 +140,7 @@
             </article>
         </footer>
     </content>
-    <div class="space"></div>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="../scripts/namespace.js"></script>
     <script src="../scripts/share.js"></script>
