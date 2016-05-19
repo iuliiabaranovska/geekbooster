@@ -386,7 +386,7 @@ body {
   overflow: scroll; }
 
 .layout {
-  width: 60%;
+  width: 64%;
   margin: 0 auto 0 auto; }
 
 .space {
@@ -422,43 +422,43 @@ content {
   border: 0px;
   border-radius: 3px; }
 
-header {
+.booster-nav {
   height: 6em;
   background-color: #323743;
   font: 100% "RobotoSlabRegular", sans-serif;
   display: flex;
   flex-direction: row;
   line-height: 6; }
-  header .headermenu {
+  .booster-nav .headermenu {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap; }
-    header .headermenu ul {
+    .booster-nav .headermenu ul {
       display: flex;
       flex-direction: row; }
-      header .headermenu ul li {
+      .booster-nav .headermenu ul li {
         list-style-type: none; }
-    header .headermenu .menu-logo {
+    .booster-nav .headermenu .menu-logo {
       display: none; }
-    header .headermenu .start-items {
+    .booster-nav .headermenu .start-items {
       width: 26%;
       justify-content: flex-start;
       align-items: center;
       padding-left: 0; }
-    header .headermenu nav {
+    .booster-nav .headermenu .end-nav {
       width: 100%;
       text-align: right;
       justify-content: center;
       align-items: flex-end;
       display: flex;
       flex-direction: column; }
-    header .headermenu .end-items {
+    .booster-nav .headermenu .end-items {
       text-align: right;
       justify-content: flex-end;
       align-items: center; }
-      header .headermenu .end-items:last-child > a {
+      .booster-nav .headermenu .end-items:last-child > a {
         margin-right: 0; }
-    header .headermenu a.item:active {
+    .booster-nav .headermenu a.item:active {
       text-decoration: none;
       text-transform: uppercase;
       color: #ffffff;
@@ -466,13 +466,13 @@ header {
       margin-right: 1em;
       border-bottom: solid 3px #e24f39;
       height: 3%; }
-    header .headermenu a.item:hover {
+    .booster-nav .headermenu a.item:hover {
       color: #c2bdbd; }
-    header .headermenu a.item.orange {
+    .booster-nav .headermenu a.item.orange {
       color: #e24f39; }
-    header .headermenu a.item.orange:hover {
+    .booster-nav .headermenu a.item.orange:hover {
       color: #bf5949; }
-    header .headermenu object.search {
+    .booster-nav .headermenu object.search {
       height: 1em; }
 
 div.slider {
@@ -597,9 +597,9 @@ footer {
     padding: 1em 1em 0 0 !important; }
 
 @media (max-width: 999px) {
-  header .headermenu span {
+  .booster-nav .headermenu span {
     margin-right: 0; }
-  header .headermenu .menu-logo {
+  .booster-nav .headermenu .menu-logo {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -607,7 +607,7 @@ footer {
     visibility: visible;
     width: 100%;
     padding-top: 2em; }
-  header .headermenu .end-items {
+  .booster-nav .headermenu .end-items {
     visibility: hidden;
     height: 0;
     opacity: 0;
@@ -616,21 +616,21 @@ footer {
     width: 100%;
     justify-content: flex-start;
     align-items: flex-end; }
-    header .headermenu .end-items li {
+    .booster-nav .headermenu .end-items li {
       background-color: #323743;
       width: 20%;
       line-height: 3;
       margin: -1px; }
-      header .headermenu .end-items li:first-of-type {
+      .booster-nav .headermenu .end-items li:first-of-type {
         margin-top: 4%; }
-    header .headermenu .end-items span {
+    .booster-nav .headermenu .end-items span {
       display: none; }
-  header .headermenu .show-navigation {
+  .booster-nav .headermenu .show-navigation {
     visibility: visible;
     height: 3em;
     opacity: 1;
     z-index: 10000; }
-  header .headermenu .item {
+  .booster-nav .headermenu .item {
     width: 100%;
     text-align: center; }
 
