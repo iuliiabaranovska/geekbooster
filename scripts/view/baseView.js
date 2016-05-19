@@ -11,17 +11,17 @@
         });
     };
 
+    self.onShareFacebook = new Event(self);
+    self.onShareTwitter = new Event(self);
+    self.onShareGoogle = new Event(self);
+
     $('#fbshare').on("click", function() { self.onShareFacebook.notify(); });
     $('#twshare').on("click", function() { self.onShareTwitter.notify(); });
     $('#ggshare').on("click", function() { self.onShareGoogle.notify(); });
 
     self.render = function() {
         renderNavigation();
-    };
-
-    self.onShareFacebook = new Event(self);
-    self.onShareTwitter = new Event(self);
-    self.onShareGoogle = new Event(self);
+    };    
 
     view.BaseView = self;
 
