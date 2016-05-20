@@ -11,6 +11,13 @@
         });
     };
 
+    // function mouseHover() {
+    //     var footerItem = $("footer .item");
+    //     footerItem.mouseover(function() {
+    //         footerItem.css("color", "#c2bdbd");
+    //     });
+    // };
+
     self.onShareFacebook = new Event(self);
     self.onShareTwitter = new Event(self);
     self.onShareGoogle = new Event(self);
@@ -21,7 +28,8 @@
 
     self.render = function() {
         renderNavigation();
-    };    
+        //mouseHover();
+    };
 
     view.BaseView = self;
 

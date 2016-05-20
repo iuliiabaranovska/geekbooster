@@ -24,6 +24,7 @@ sans-serif;
 $text-color: #ffffff;
 $main-color: #e24f39;
 $background-color: #323743;
+$hover-color: #c2bdbd;
 html {
     height: 100%;
 }
@@ -180,7 +181,7 @@ footer {
         text-transform: none;
     }
     a.item:hover {
-        color: #c2bdbd;
+        color: $hover-color;
     }
     p {
         margin: 0em;
@@ -259,7 +260,7 @@ footer {
                 text-align: center;
             }
         }
-    }    
+    }
     footer {
         overflow: hidden;
     }
