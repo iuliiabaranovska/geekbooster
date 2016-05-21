@@ -1,191 +1,191 @@
-    @import "../base/base.scss";
-    .content-wrapper {
-        background-color: #ffffff;
-    }
-    
-    .projects {
+@import "../base/base.scss";
+.content-wrapper {
+    background-color: #ffffff;
+}
+
+.projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .project {
+        width: calc(50% - 0.75em);
+        padding-top: 3em;
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        &:nth-child(odd) {
+            margin-right: 0.75em;
+        }
+        &:nth-child(even) {
+            margin-left: 0.75em;
+        }
+        .project-logo {
+            background: url("../../images/projects/spaceman.png") no-repeat top center;
+            background-size: contain;
+            width: 50%;
+        }
+        .info {
+            color: black;
+            width: 50%;
+            height: 50%;
+            font-size: 75%;
+            margin-left: 0.5em;
+            letter-spacing: 0.02em;
+            .project-header {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: flex-start;
+                justify-content: flex-start;
+                position: relative;
+                p,
+                .totalBudget {
+                    margin: 0;
+                    text-align: center;
+                }
+                .column {
+                    line-height: 1;
+                    padding-right: 1.5em;
+                    margin-top: 0.5em;
+                    &:first-child {}
+                    &:last-child {
+                        padding-right: 0;
+                        margin-top: 0;
+                    }
+                }
+                .currentBudget,
+                .contributorsAmount {
+                    display: inline;
+                    font-size: 1.1em;
+                    color: $main-color;
+                    &>span {
+                        font-size: 150%;
+                    }
+                }
+                .labels {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: 0;
+                    margin: 0;
+                    li {
+                        list-style-type: none;
+                        object {
+                            height: 1.5em;
+                        }
+                    }
+                }
+            }
+            .name {
+                color: black;
+                font-family: $caption-font;
+                margin: 0;
+                margin-top: 1em;
+            }
+            .creator {
+                color: $main-color;
+                font-family: $caption-font;
+                margin: 0;
+                margin-top: 0.7em;
+                .button {
+                    margin: 0;
+                    font-size: 1em;
+                    line-height: 0.6;
+                    margin-left: 1em;
+                }
+            }
+            .description {
+                line-height: 1.4em;
+                margin-top: 0.7em;
+            }
+            .progress {
+                line-height: 1.5;
+                margin: 1em 0;
+                progress {
+                    display: block;
+                    width: calc(100% - 2.8em);
+                    height: 0.3em;
+                    background: #fff;
+                    // @keyframes animate-stripes {
+                    //     100% {
+                    //         background-position: -100px 0px;
+                    //     }
+                    // }
+                    // animation: animate-stripes 5s linear infinite;
+                    &::-webkit-progress-bar {
+                        background: $hover-color;
+                        border-radius: 5px;
+                    }
+                    &::-webkit-progress-value {
+                        background: $main-color;
+                    }
+                }
+            }
+            .tags {
+                list-style-type: none;
+                padding: 0;
+                margin: 1em 0;
+                position: relative;
+                li {
+                    display: inline;
+                    background-color: #190640;
+                    color: $text-color;
+                    padding: 0 1em;
+                    border-radius: 0.4em;
+                }
+                .more-btn {
+                    height: 2.8em;
+                    width: 2.8em;
+                    vertical-align: bottom;
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    .triangle {
+                        fill: #e24f39;
+                    }
+                    .plus {
+                        stroke: #fff;
+                        stroke-width: 2;
+                    }
+                }
+            }
+        }
+    }
+    .pagination {
+        height: 3em;
+        width: 100%;
+    }
+}
+
+@media (max-width: 1400px) {
+    .projects {
         .project {
-            width: calc(50% - 0.75em);
-            padding-top: 3em;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
+            width: 100%;
             &:nth-child(odd) {
-                margin-right: 0.75em;
+                margin-right: 0;
             }
             &:nth-child(even) {
-                margin-left: 0.75em;
+                margin-left: 0;
             }
-            .project-logo {
-                background: url("../../images/projects/spaceman.png") no-repeat top center;
-                background-size: contain;
-                width: 50%;
-            }
+        }
+    }
+}
+
+@media (max-width: 1450px) {
+    .projects {
+        .project {
             .info {
-                color: black;
-                width: 50%;
-                height: 50%;
-                font-size: 75%;
-                margin-left: 0.5em;
-                letter-spacing: 0.02em;
                 .project-header {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: nowrap;
-                    align-items: flex-start;
-                    justify-content: flex-start;
-                    position: relative;
                     p,
                     .totalBudget {
-                        margin: 0;
-                        text-align: center;
-                    }
-                    .column {
-                        line-height: 1;
-                        padding-right: 1.5em;
-                        margin-top: 0.5em;
-                        &:first-child {}
-                        &:last-child {
-                            padding-right: 0;
-                            margin-top: 0;
-                        }
+                        font-size: 0.9em;
                     }
                     .currentBudget,
                     .contributorsAmount {
-                        display: inline;
-                        font-size: 1.1em;
-                        color: $main-color;
-                        &>span {
-                            font-size: 150%;
-                        }
-                    }
-                    .labels {
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        padding: 0;
-                        margin: 0;
-                        li {
-                            list-style-type: none;
-                            object {
-                                height: 1.5em;
-                            }
-                        }
-                    }
-                }
-                .name {
-                    color: black;
-                    font-family: $caption-font;
-                    margin: 0;
-                    margin-top: 1em;
-                }
-                .creator {
-                    color: $main-color;
-                    font-family: $caption-font;
-                    margin: 0;
-                    margin-top: 0.7em;
-                    .button {
-                        margin: 0;
                         font-size: 1em;
-                        line-height: 0.6;
-                        margin-left: 1em;
-                    }
-                }
-                .description {
-                    line-height: 1.4em;
-                    margin-top: 0.7em;
-                }
-                .progress {
-                    line-height: 1.5;
-                    margin: 1em 0;
-                    progress {
-                        display: block;
-                        width: calc(100% - 2.8em);
-                        height: 0.3em;
-                        background: #fff;
-                        // @keyframes animate-stripes {
-                        //     100% {
-                        //         background-position: -100px 0px;
-                        //     }
-                        // }
-                        // animation: animate-stripes 5s linear infinite;
-                        &::-webkit-progress-bar {
-                            background: $hover-color;
-                            border-radius: 5px;
-                        }
-                        &::-webkit-progress-value {
-                            background: $main-color;
-                        }
-                    }
-                }
-                .tags {
-                    list-style-type: none;
-                    padding: 0;
-                    margin: 1em 0;
-                    position: relative;
-                    li {
-                        display: inline;
-                        background-color: #190640;
-                        color: $text-color;
-                        padding: 0 1em;
-                        border-radius: 0.4em;
-                    }
-                    .more-btn {
-                        height: 2.8em;
-                        width: 2.8em;
-                        vertical-align: bottom;
-                        position: absolute;
-                        right: 0;
-                        bottom: 0;
-                        .triangle {
-                            fill: #e24f39;
-                        }
-                        .plus {
-                            stroke: #fff;
-                            stroke-width: 2;
-                        }
-                    }
-                }
-            }
-        }
-        .pagination {
-            height: 3em;
-            width: 100%;
-        }
-    }
-    
-    @media (max-width: 1400px) {
-        .projects {
-            .project {
-                width: 100%;
-                &:nth-child(odd) {
-                    margin-right: 0;
-                }
-                &:nth-child(even) {
-                    margin-left: 0;
-                }
-            }
-        }
-    }
-    
-    @media (max-width: 1450px) {
-        .projects {
-            .project {
-                .info {
-                    .project-header {
-                        p,
-                        .totalBudget {
-                            font-size: 0.9em;
-                        }
-                        .currentBudget,
-                        .contributorsAmount {
-                            font-size: 1em;
-                        }
                     }
                 }
             }
         }
     }
+}

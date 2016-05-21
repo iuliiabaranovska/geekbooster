@@ -11,12 +11,22 @@
         });
     };
 
-    // function mouseHover() {
-    //     var footerItem = $("footer .item");
-    //     footerItem.mouseover(function() {
-    //         footerItem.css("color", "#c2bdbd");
-    //     });
-    // };
+    function renderScrollUp() {
+        var offset = 100,
+            scrollTopDuration = 700,
+            $backToTop = $('.scrollup');
+
+        $(window).on('scroll', function() {
+            $backToTop.toggleClass('scrollup-is-visible', $(this).scrollTop() > offset);
+        });
+
+        $backToTop.on('click', function(event) {
+            event.preventDefault();
+            $('body,html').animate({
+                scrollTop: 0,
+            }, scrollTopDuration);
+        });
+    };
 
     self.onShareFacebook = new Event(self);
     self.onShareTwitter = new Event(self);
@@ -28,7 +38,7 @@
 
     self.render = function() {
         renderNavigation();
-        //mouseHover();
+        renderScrollUp();
     };
 
     view.BaseView = self;
