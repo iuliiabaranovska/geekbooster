@@ -10,7 +10,7 @@
                 $(this).find('li').show();
             })
             .unslider({
-                //autoplay: true,
+                autoplay: true,
                 arrows: false,
                 infinite: true,
                 delay: 4000

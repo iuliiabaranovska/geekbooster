@@ -456,7 +456,7 @@ content {
       text-align: right;
       justify-content: flex-end;
       align-items: center; }
-      .booster-nav .headermenu .end-items:last-child > a {
+      .booster-nav .headermenu .end-items li:last-child > a {
         margin-right: 0; }
     .booster-nav .headermenu a.item:active {
       text-decoration: none;
@@ -567,11 +567,15 @@ footer {
   flex-direction: row;
   flex-wrap: wrap; }
   .projects .project {
-    width: 50%;
+    width: calc(50% - 0.75em);
     padding-top: 3em;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap; }
+    .projects .project:nth-child(odd) {
+      margin-right: 0.75em; }
+    .projects .project:nth-child(even) {
+      margin-left: 0.75em; }
     .projects .project .project-logo {
       background: url("../../images/projects/spaceman.png") no-repeat top center;
       background-size: contain;
@@ -580,7 +584,9 @@ footer {
       color: black;
       width: 50%;
       height: 50%;
-      font-size: 75%; }
+      font-size: 75%;
+      margin-left: 0.5em;
+      letter-spacing: 0.02em; }
       .projects .project .info .project-header {
         display: flex;
         flex-direction: row;
@@ -594,54 +600,100 @@ footer {
           text-align: center; }
         .projects .project .info .project-header .column {
           line-height: 1;
-          padding-right: 2em; }
+          padding-right: 1.5em;
+          margin-top: 0.5em; }
           .projects .project .info .project-header .column:last-child {
-            padding-right: 0; }
+            padding-right: 0;
+            margin-top: 0; }
         .projects .project .info .project-header .currentBudget,
         .projects .project .info .project-header .contributorsAmount {
           display: inline;
-          font-size: 120%;
+          font-size: 1.1em;
           color: #e24f39; }
           .projects .project .info .project-header .currentBudget > span,
           .projects .project .info .project-header .contributorsAmount > span {
             font-size: 150%; }
-        .projects .project .info .project-header ul {
+        .projects .project .info .project-header .labels {
           position: absolute;
           top: 0;
           right: 0;
           padding: 0;
           margin: 0; }
-          .projects .project .info .project-header ul li {
+          .projects .project .info .project-header .labels li {
             list-style-type: none; }
-            .projects .project .info .project-header ul li object {
+            .projects .project .info .project-header .labels li object {
               height: 1.5em; }
       .projects .project .info .name {
-        color: black; }
+        color: black;
+        font-family: "RobotoSlabRegular", sans-serif;
+        margin: 0;
+        margin-top: 1em; }
       .projects .project .info .creator {
-        color: #e24f39; }
+        color: #e24f39;
+        font-family: "RobotoSlabRegular", sans-serif;
+        margin: 0;
+        margin-top: 0.7em; }
+        .projects .project .info .creator .button {
+          margin: 0;
+          font-size: 1em;
+          line-height: 0.6;
+          margin-left: 1em; }
+      .projects .project .info .description {
+        line-height: 1.4em;
+        margin-top: 0.7em; }
       .projects .project .info .progress {
         line-height: 1.5;
         margin: 1em 0; }
         .projects .project .info .progress progress {
           display: block;
-          width: 16em;
+          width: calc(100% - 2.8em);
           height: 0.3em;
-          background-color: #eee;
-          border-radius: 2px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset; }
+          background: #fff; }
+          .projects .project .info .progress progress::-webkit-progress-bar {
+            background: #c2bdbd;
+            border-radius: 5px; }
+          .projects .project .info .progress progress::-webkit-progress-value {
+            background: #e24f39; }
       .projects .project .info .tags {
         list-style-type: none;
         padding: 0;
-        margin: 1em 0; }
+        margin: 1em 0;
+        position: relative; }
         .projects .project .info .tags li {
           display: inline;
-          background-color: darkblue;
+          background-color: #190640;
           color: #ffffff;
           padding: 0 1em;
           border-radius: 0.4em; }
+        .projects .project .info .tags .more-btn {
+          height: 2.8em;
+          width: 2.8em;
+          vertical-align: bottom;
+          position: absolute;
+          right: 0;
+          bottom: 0; }
+          .projects .project .info .tags .more-btn .triangle {
+            fill: #e24f39; }
+          .projects .project .info .tags .more-btn .plus {
+            stroke: #fff;
+            stroke-width: 2; }
+  .projects .pagination {
+    height: 3em;
+    width: 100%; }
 
-@media (max-width: 999px) {
+@media (max-width: 1400px) {
   .projects .project {
-    width: 100%; } }
+    width: 100%; }
+    .projects .project:nth-child(odd) {
+      margin-right: 0; }
+    .projects .project:nth-child(even) {
+      margin-left: 0; } }
+@media (max-width: 1450px) {
+  .projects .project .info .project-header p,
+  .projects .project .info .project-header .totalBudget {
+    font-size: 0.9em; }
+  .projects .project .info .project-header .currentBudget,
+  .projects .project .info .project-header .contributorsAmount {
+    font-size: 1em; } }
 
 /*# sourceMappingURL=projects.css.map */

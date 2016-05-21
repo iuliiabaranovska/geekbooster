@@ -131,7 +131,7 @@ content {
             text-align: right;
             justify-content: flex-end;
             align-items: center;
-            &:last-child>a {
+            li:last-child>a {
                 margin-right: 0;
             }
         }

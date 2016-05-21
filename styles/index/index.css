@@ -456,7 +456,7 @@ content {
       text-align: right;
       justify-content: flex-end;
       align-items: center; }
-      .booster-nav .headermenu .end-items:last-child > a {
+      .booster-nav .headermenu .end-items li:last-child > a {
         margin-right: 0; }
     .booster-nav .headermenu a.item:active {
       text-decoration: none;
