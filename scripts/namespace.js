@@ -1,7 +1,8 @@
 var extend = function(namespace, parent) {
 
+    parent = parent || window,
+
     var parts = namespace.split('.'),
-        parent = parent || window,
         index = 0;
 
     for (index = 0; index < parts.length; index++) {
