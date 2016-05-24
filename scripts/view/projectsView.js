@@ -7,10 +7,12 @@
         template = $("#projectTemplate").remove().html();
 
     self.renderProjects = function(projects) {
-        projects.reverse().forEach(function(project) {
-            var projectMarkup = Mustache.to_html(template, project);
-            $projects.prepend(projectMarkup);
-        });
+        projects
+            .reverse() // for correct order since we use prepend method
+            .forEach(function(project) {
+                var projectMarkup = Mustache.to_html(template, project);
+                $projects.prepend(projectMarkup);
+            });
     };
 
     view.ProjectsView = self;

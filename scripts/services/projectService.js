@@ -6,7 +6,7 @@
 
         function ProjectService() {}
 
-        ProjectService.prototype.getAll = function() {
+        ProjectService.prototype.getAll = function(callback) {
 
             var index = 0,
                 projects = [],
@@ -39,7 +39,7 @@
                 projects.push(newProject);
             };
 
-            return projects;
+            callback(projects);
         };
 
         return ProjectService;
