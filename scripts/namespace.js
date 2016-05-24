@@ -1,6 +1,6 @@
 var extend = function(namespace, parent) {
 
-    parent = parent || window,
+    parent = parent || window;
 
     var parts = namespace.split('.'),
         index = 0;
