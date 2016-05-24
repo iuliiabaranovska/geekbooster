@@ -13,6 +13,7 @@
         view.onShareGoogle.attach(base.shareGoogle);
 
         view.render();
+        view.renderProjects(projectService.getAll());
     }
 
     controller.ProjectsController = self;

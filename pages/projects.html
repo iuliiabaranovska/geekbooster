@@ -39,178 +39,47 @@
         </nav>
         <div class="content-wrapper">
             <content class="projects layout">
-                <article class="project">
-                    <div class="project-logo"></div>
-                    <div class="info">
-                        <header class="project-header">
-                            <div class="column">
-                                <div class="currentBudget"><span>123</span> 789 <span>$</span></div>
-                                <p>of</p>
-                                <div class="totalBudget">800 000$</div>
+                <template id="projectTemplate">
+                    <article class="project">
+                        <div class="project-logo"><img src="{{logoUrl}}"></div>
+                        <div class="info">
+                            <header class="project-header">
+                                <div class="column">
+                                    <div class="currentBudget"><span>{{currentBudget}} $</span></div>
+                                    <p>of</p>
+                                    <div class="totalBudget">{{totalBudget}} $</div>
+                                </div>
+                                <div class="column">
+                                    <div class="contributorsAmount"><span>{{contributorsAmount}}</span> people</div>
+                                    <p>working on it</p>
+                                </div>
+                                <ul class="labels column">
+                                    {{#labels}}
+                                    <li>
+                                        <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
+                                    </li>
+                                    {{/labels}}
+                                </ul>
+                            </header>
+                            <h2 class="name">{{name}}</h2>
+                            <h3 class="creator">{{creator}}<button class="button">Go</button></h3>
+                            <div class="description">{{description}}</div>
+                            <div class="progress">Progress: {{getPercentageProgress}}%
+                                <progress value="{{progress}}" max="1"></progress>
                             </div>
-                            <div class="column">
-                                <div class="contributorsAmount"><span>69</span> people</div>
-                                <p>working on it</p>
-                            </div>
-                            <ul class="labels column">
-                                <li>
-                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                                </li>
-                                <li>
-                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                                </li>
-                                <li>
-                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                                </li>
+                            <ul class="tags">
+                                {{#tags}}
+                                <li>#{{.}}</li>
+                                {{/tags}}
+                                <svg class="more-btn">
+                                    <polygon class="triangle" points="0 30, 30 30, 30 0" />
+                                    <line class="plus" x1="16" y1="21" x2="26" y2="21" />
+                                    <line class="plus" x1="21" y1="16" x2="21" y2="26" />
+                                </svg>
                             </ul>
-                        </header>
-                        <h2 class="name">Garold's space odisea</h2>
-                        <h3 class="creator">by Julia Baranovska team <button class="button">Go</button></h3>
-                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed purus libero, iaculis ac arcu nec, pretium fringilla magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec et urna faucibus, lobortis elit sed, blandit sem. Nulla facilisi. Nam dignissim scelerisque odio ac venenatis. Pellentesque in mollis risus. Morbi tempor sodales sodales. Nulla fringilla, sapien ac finibus commodo, dui tortor porta leo, quis sollicitudin mauris neque eget sem. Phasellus id nulla ut arcu eleifend porttitor sed ut dolor. Praesent elit dolor, euismod ac consequat vitae, consectetur nec nisi. Pellentesque nec nisi non lectus vestibulum vulputate. Mauris nec hendrerit magna. Maecenas quis tincidunt augue. Duis ornare fringilla lobortis.</div>
-                        <div class="progress">Progress: 48%
-                            <progress value="0.48" max="1"></progress>
                         </div>
-                        <ul class="tags">
-                            <li>#space</li>
-                            <li>#space</li>
-                            <li>#space</li>
-                            <svg class="more-btn">
-                                <polygon class="triangle" points="0 30, 30 30, 30 0"/>
-                                <line class="plus" x1="16" y1="21" x2="26" y2="21" />
-                                <line class="plus" x1="21" y1="16" x2="21" y2="26" />
-                            </svg>
-                        </ul>
-                    </div>
-                </article>
-                                <article class="project">
-                    <div class="project-logo"></div>
-                    <div class="info">
-                        <header class="project-header">
-                            <div class="column">
-                                <div class="currentBudget"><span>123</span> 789 <span>$</span></div>
-                                <p>of</p>
-                                <div class="totalBudget">800 000$</div>
-                            </div>
-                            <div class="column">
-                                <div class="contributorsAmount"><span>69</span> people</div>
-                                <p>working on it</p>
-                            </div>
-                            <ul class="labels column">
-                                <li>
-                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                                </li>
-                                <li>
-                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                                </li>
-                                <li>
-                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                                </li>
-                            </ul>
-                        </header>
-                        <h2 class="name">Garold's space odisea</h2>
-                        <h3 class="creator">by Julia Baranovska team <button class="button">Go</button></h3>
-                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed purus libero, iaculis ac arcu nec, pretium fringilla magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec et urna faucibus, lobortis elit sed, blandit sem. Nulla facilisi. Nam dignissim scelerisque odio ac venenatis. Pellentesque in mollis risus. Morbi tempor sodales sodales. Nulla fringilla, sapien ac finibus commodo, dui tortor porta leo, quis sollicitudin mauris neque eget sem. Phasellus id nulla ut arcu eleifend porttitor sed ut dolor. Praesent elit dolor, euismod ac consequat vitae, consectetur nec nisi. Pellentesque nec nisi non lectus vestibulum vulputate. Mauris nec hendrerit magna. Maecenas quis tincidunt augue. Duis ornare fringilla lobortis.</div>
-                        <div class="progress">Progress: 48%
-                            <progress value="0.48" max="1"></progress>
-                        </div>
-                        <ul class="tags">
-                            <li>#space</li>
-                            <li>#space</li>
-                            <li>#space</li>
-                            <svg class="more-btn">
-                                <polygon class="triangle" points="0 30, 30 30, 30 0"/>
-                                <line class="plus" x1="16" y1="21" x2="26" y2="21" />
-                                <line class="plus" x1="21" y1="16" x2="21" y2="26" />
-                            </svg>
-                        </ul>
-                    </div>
-                </article>
-                                <article class="project">
-                    <div class="project-logo"></div>
-                    <div class="info">
-                        <header class="project-header">
-                            <div class="column">
-                                <div class="currentBudget"><span>123</span> 789 <span>$</span></div>
-                                <p>of</p>
-                                <div class="totalBudget">800 000$</div>
-                            </div>
-                            <div class="column">
-                                <div class="contributorsAmount"><span>69</span> people</div>
-                                <p>working on it</p>
-                            </div>
-                            <ul class="labels column">
-                                <li>
-                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                                </li>
-                                <li>
-                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                                </li>
-                                <li>
-                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                                </li>
-                            </ul>
-                        </header>
-                        <h2 class="name">Garold's space odisea</h2>
-                        <h3 class="creator">by Julia Baranovska team <button class="button">Go</button></h3>
-                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed purus libero, iaculis ac arcu nec, pretium fringilla magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec et urna faucibus, lobortis elit sed, blandit sem. Nulla facilisi. Nam dignissim scelerisque odio ac venenatis. Pellentesque in mollis risus. Morbi tempor sodales sodales. Nulla fringilla, sapien ac finibus commodo, dui tortor porta leo, quis sollicitudin mauris neque eget sem. Phasellus id nulla ut arcu eleifend porttitor sed ut dolor. Praesent elit dolor, euismod ac consequat vitae, consectetur nec nisi. Pellentesque nec nisi non lectus vestibulum vulputate. Mauris nec hendrerit magna. Maecenas quis tincidunt augue. Duis ornare fringilla lobortis.</div>
-                        <div class="progress">Progress: 48%
-                            <progress value="0.48" max="1"></progress>
-                        </div>
-                        <ul class="tags">
-                            <li>#space</li>
-                            <li>#space</li>
-                            <li>#space</li>
-                            <svg class="more-btn">
-                                <polygon class="triangle" points="0 30, 30 30, 30 0"/>
-                                <line class="plus" x1="16" y1="21" x2="26" y2="21" />
-                                <line class="plus" x1="21" y1="16" x2="21" y2="26" />
-                            </svg>
-                        </ul>
-                    </div>
-                </article>
-                                <article class="project">
-                    <div class="project-logo"></div>
-                    <div class="info">
-                        <header class="project-header">
-                            <div class="column">
-                                <div class="currentBudget"><span>123</span> 789 <span>$</span></div>
-                                <p>of</p>
-                                <div class="totalBudget">800 000$</div>
-                            </div>
-                            <div class="column">
-                                <div class="contributorsAmount"><span>69</span> people</div>
-                                <p>working on it</p>
-                            </div>
-                            <ul class="labels column">
-                                <li>
-                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                                </li>
-                                <li>
-                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                                </li>
-                                <li>
-                                    <object class="yellow-label" data="../images/projects/labels/yellow.svg" type="image/svg+xml"></object>
-                                </li>
-                            </ul>
-                        </header>
-                        <h2 class="name">Garold's space odisea</h2>
-                        <h3 class="creator">by Julia Baranovska team <button class="button">Go</button></h3>
-                        <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed purus libero, iaculis ac arcu nec, pretium fringilla magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec et urna faucibus, lobortis elit sed, blandit sem. Nulla facilisi. Nam dignissim scelerisque odio ac venenatis. Pellentesque in mollis risus. Morbi tempor sodales sodales. Nulla fringilla, sapien ac finibus commodo, dui tortor porta leo, quis sollicitudin mauris neque eget sem. Phasellus id nulla ut arcu eleifend porttitor sed ut dolor. Praesent elit dolor, euismod ac consequat vitae, consectetur nec nisi. Pellentesque nec nisi non lectus vestibulum vulputate. Mauris nec hendrerit magna. Maecenas quis tincidunt augue. Duis ornare fringilla lobortis.</div>
-                        <div class="progress">Progress: 48%
-                            <progress value="0.48" max="1"></progress>
-                        </div>
-                        <ul class="tags">
-                            <li>#space</li>
-                            <li>#space</li>
-                            <li>#space</li>
-                            <svg class="more-btn">
-                                <polygon class="triangle" points="0 30, 30 30, 30 0"/>
-                                <line class="plus" x1="16" y1="21" x2="26" y2="21" />
-                                <line class="plus" x1="21" y1="16" x2="21" y2="26" />
-                            </svg>
-                        </ul>
-                    </div>
-                </article>
+                    </article>
+                </template>
                 <div class="pagination"></div>
             </content>
         </div>
@@ -272,16 +141,17 @@
         </footer>
     </content>
     <a href="#0" class="scrollup">Top</a>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="../scripts/namespace.js"></script>
-    <script src="../scripts/share.js"></script>
-    <script src="../scripts/event.js"></script>
-    <script src="../scripts/model/projectsModel.js"></script>
-    <script src="../scripts/services/projectService.js"></script>
-    <script src="../scripts/view/baseView.js"></script>
-    <script src="../scripts/view/projectsView.js"></script>
-    <script src="../scripts/controller/baseController.js"></script>
-    <script src="../scripts/controller/projectsController.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../packages/mustachejs/mustache.min.js"></script>
+    <script type="text/javascript" src="../scripts/namespace.js"></script>
+    <script type="text/javascript" src="../scripts/share.js"></script>
+    <script type="text/javascript" src="../scripts/event.js"></script>
+    <script type="text/javascript" src="../scripts/model/projectsModel.js"></script>
+    <script type="text/javascript" src="../scripts/services/projectService.js"></script>
+    <script type="text/javascript" src="../scripts/view/baseView.js"></script>
+    <script type="text/javascript" src="../scripts/view/projectsView.js"></script>
+    <script type="text/javascript" src="../scripts/controller/baseController.js"></script>
+    <script type="text/javascript" src="../scripts/controller/projectsController.js"></script>
     <script>
     $(document).ready(function() {
         var controller = GeekBooster.Controller.ProjectsController;
