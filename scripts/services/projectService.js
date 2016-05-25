@@ -1,10 +1,11 @@
 (function() {
 
-    var Services = extend("GeekBooster.Services");
+    var services = extend("GeekBooster.Services"),
+        dbProjectService = new services.IndexedTableService("Projects");
 
-    Services.ProjectService = (function() {
+    services.ProjectService = (function() {
 
-        function ProjectService() {}
+        function ProjectService() {};
 
         ProjectService.prototype.getAll = function(callback) {
 
@@ -16,6 +17,7 @@
 
                 newProject = new GeekBooster.Model.Project();
 
+                newProject.id = index + 1;
                 newProject.logoUrl = "../images/projects/spaceman.png";
 
                 newProject.currentBudget = index * 100 + 500;
@@ -39,7 +41,15 @@
                 projects.push(newProject);
             };
 
-            callback(projects);
+            //dbProjectService.createStore("id");
+            //dbProjectService.addRange(projects);
+
+            dbProjectService.getAll(function (items) {
+                //convert items to Project
+                callback(items);
+            });
+
+            //callback(projects);
         };
 
         return ProjectService;

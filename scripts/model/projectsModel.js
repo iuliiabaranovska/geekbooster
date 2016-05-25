@@ -1,9 +1,10 @@
 (function() {
 
-    var Model = extend("GeekBooster.Model");
+    var model = extend("GeekBooster.Model");
 
-    Model.Project = function Project() {
+    model.Project = function Project() {
 
+        this.id = 0;
         this.name = "";
         this.description = "";
         this.logoUrl = null;
@@ -19,6 +20,25 @@
 
         this.labels = [];
         this.tags = [];
+    };
+
+    model.Project.prototype.toEntity = function () {
+        
+        return {
+            id: this.id,
+            name : this.name,
+            description : this.description,
+            logoUrl : this.logoUrl,
+            creator : this.creator,
+
+            currentBudget : this.currentBudget,
+            totalBudget : this.totalBudget,
+            contributorsAmount : this.contributorsAmount,
+            progress : this.progress,
+        
+            labels : this.labels,
+            tags : this.tags
+        };
     };
 
 }());
