@@ -6,6 +6,7 @@
     <title>Geek Booster</title>
     <link rel="stylesheet" type="text/css" href="../styles/index/index.css">
     <link rel="stylesheet" type="text/css" href="../styles/projects/projects.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../packages/dropdown/css/jquery.dropdown.css" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -37,6 +38,37 @@
                 </div>
             </div>
         </nav>
+        <div class="filters">
+            <div class="layout">
+                <span class="dropdown">
+                    <svg class="triangle-point">
+                        <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
+                    </svg>
+                    All Sience Fields
+                </span>
+                <span class="dropdown">
+                    <svg class="triangle-point">
+                        <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
+                    </svg>
+                    Location
+                </span>
+                <span class="dropdown">
+                    <svg class="triangle-point">
+                        <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
+                    </svg>
+                    Most popular
+                </span>
+                <span class="dropdown">
+                    <svg class="triangle-point">
+                        <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
+                    </svg>
+                    Vacancy
+                </span>
+            </div>
+        </div>
+        <div class="hashes layout">
+            <span style="visibility: hidden;">hash</span>
+        </div>
         <div class="content-wrapper">
             <content class="projects layout">
                 <template id="projectTemplate">
@@ -143,6 +175,7 @@
     <a href="#0" class="scrollup">Top</a>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script type="text/javascript" src="../packages/mustachejs/mustache.min.js"></script>
+    <!-- <script type="text/javascript" src="../packages/dropdown/js/jquery.dropdown.min.js"></script> -->
     <script type="text/javascript" src="../scripts/namespace.js"></script>
     <script type="text/javascript" src="../scripts/share.js"></script>
     <script type="text/javascript" src="../scripts/event.js"></script>

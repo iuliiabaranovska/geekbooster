@@ -41,13 +41,17 @@
                 projects.push(newProject);
             };
 
-            //dbProjectService.createStore("id");
+            //dbProjectService.createStore("id",[new GeekBooster.Index('ProjectName',"name", false), new GeekBooster.Index('ProjectCreator',"creator", false)]);
             //dbProjectService.addRange(projects);
 
-            dbProjectService.getAll(function (items) {
-                //convert items to Project
-                callback(items);
+            dbProjectService.getAll(function(items) {
+                var projectItem = items.map(function(item) {
+                    return new GeekBooster.Model.Project(item);
+                });
+                callback(projectItem);
             });
+
+             dbProjectService.searchItems("Gar");
 
             //callback(projects);
         };

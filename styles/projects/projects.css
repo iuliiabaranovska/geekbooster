@@ -587,6 +587,28 @@ footer {
 .content-wrapper {
   background-color: #ffffff; }
 
+.filters {
+  background-color: #ffffff;
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 1%; }
+  .filters .dropdown {
+    color: #000000;
+    font-family: "RobotoSlabRegular", sans-serif;
+    font-weight: bold;
+    font-size: 110%;
+    cursor: pointer; }
+    .filters .dropdown:not(:last-child) {
+      margin-right: 11%; }
+    .filters .dropdown .triangle-point {
+      height: 0.8em;
+      width: 1em;
+      vertical-align: middle;
+      fill: #e24f39; }
+
+.hashes {
+  background-color: #323743; }
+
 .projects {
   display: flex;
   flex-direction: row;
@@ -715,7 +737,10 @@ footer {
     .projects .project:nth-child(odd) {
       margin-right: 0; }
     .projects .project:nth-child(even) {
-      margin-left: 0; } }
+      margin-left: 0; }
+
+  .filters .dropdown:not(:last-child) {
+    margin-right: 8%; } }
 @media (max-width: 1450px) {
   .projects .project .info .project-header p,
   .projects .project .info .project-header .totalBudget {

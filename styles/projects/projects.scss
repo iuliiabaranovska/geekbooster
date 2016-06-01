@@ -3,6 +3,33 @@
     background-color: #ffffff;
 }
 
+.filters {
+    background-color: #ffffff;
+    text-align: center;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    .dropdown {
+        color: #000000;
+        font-family: $caption-font;
+        font-weight: bold;
+        font-size: 110%;
+        cursor: pointer;
+        &:not(:last-child) {
+            margin-right: 11%;
+        }
+        .triangle-point {
+            height: 0.8em;
+            width: 1em;
+            vertical-align: middle;
+            fill: #e24f39;
+        }
+    }
+}
+
+.hashes {
+    background-color: $background-color;
+}
+
 .projects {
     display: flex;
     flex-direction: row;
@@ -172,6 +199,11 @@
             &:nth-child(even) {
                 margin-left: 0;
             }
+        }
+    }
+    .filters {
+        .dropdown:not(:last-child) {
+            margin-right: 8%;
         }
     }
 }
