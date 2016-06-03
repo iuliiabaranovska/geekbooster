@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Geek Booster</title>
+    <link rel="stylesheet" type="text/css" href="../packages/tooltipster/css/tooltipster.css" />
+    <link rel="stylesheet" type="text/css" href="../packages/select2/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../styles/index/index.css">
     <link rel="stylesheet" type="text/css" href="../styles/projects/projects.css">
-    <!-- <link rel="stylesheet" type="text/css" href="../packages/dropdown/css/jquery.dropdown.css" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -40,18 +41,38 @@
         </nav>
         <div class="filters">
             <div class="layout">
-                <span class="dropdown">
+                <span class="dropdown tooltip" title="This is my div's tooltip message!">
                     <svg class="triangle-point">
                         <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
                     </svg>
                     All Sience Fields
                 </span>
-                <span class="dropdown">
+                <template>
+                    <p>Hello, my friend!</p>
+                </template>
+                <span class="dropdown tooltip" title="Hello!">
                     <svg class="triangle-point">
                         <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
                     </svg>
                     Location
                 </span>
+                <template>
+                    <label class="location-label">Country</label>
+                    <select>
+                        <option></option>
+                        <option value="male">Male</option>
+                        <option value="famale">Female</option>
+                    </select>
+                    <label class="location-label">City</label>
+                    <select>
+                        <option></option>
+                        <option value="male">Male</option>
+                        <option value="famale">Female</option>
+                    </select>
+                    <div class="button-wrapper">
+                        <button class="button apply">Applly</button>
+                    </div>
+                </template>
                 <span class="dropdown">
                     <svg class="triangle-point">
                         <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
@@ -175,7 +196,8 @@
     <a href="#0" class="scrollup">Top</a>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script type="text/javascript" src="../packages/mustachejs/mustache.min.js"></script>
-    <!-- <script type="text/javascript" src="../packages/dropdown/js/jquery.dropdown.min.js"></script> -->
+    <script type="text/javascript" src="../packages/tooltipster/js/jquery.tooltipster.min.js"></script>
+    <script type="text/javascript" src="../packages/select2/js/select2.min.js"></script>
     <script type="text/javascript" src="../scripts/namespace.js"></script>
     <script type="text/javascript" src="../scripts/share.js"></script>
     <script type="text/javascript" src="../scripts/event.js"></script>

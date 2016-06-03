@@ -98,11 +98,11 @@
                     index.openCursor(boundKeyRange).onsuccess = function(event) {
                         var cursor = event.target.result;
                         if (cursor) {
-                            console.log(cursor.value);
+                            //console.log(cursor.value);
                             //console.log(item);
                             cursor.continue();
                         } else {
-                            console.log("This items don't exist!")
+                            //console.log("This items don't exist!")
                         }
                     };
                 };

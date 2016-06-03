@@ -26,8 +26,51 @@
     }
 }
 
+.tooltipster-base {
+    z-index: 1;
+    width: 10%;
+}
+
+.tooltipster-shadow .tooltipster-content{
+    padding: 0.5em;
+}
+
+.select2 {
+    width: 100% !important;
+}
+
+.select2-dropdown {
+    z-index: 10;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: #e24f39 transparent transparent transparent;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent #e24f39 transparent;
+}
+
+.location-label {
+    display: inline-block;
+    margin-bottom: 0.4em;
+    &:not(:first-child){
+        margin-top: 0.4em;
+    }
+    font-size: 90%;
+}
+
 .hashes {
     background-color: $background-color;
+}
+
+.button-wrapper {
+    text-align: right;
+    .apply {
+        margin-top: 0.5em;
+        font-size: 80%;
+        letter-spacing: 0.2em;
+    }
 }
 
 .projects {
