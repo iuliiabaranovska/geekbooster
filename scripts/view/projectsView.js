@@ -3,15 +3,26 @@
     var view = extend("GeekBooster.View"),
         base = view.BaseView,
         self = Object.create(base),
-        $projects = $('.projects'),
-        template = $("#projectTemplate").remove().html();
+        $projects = null,
+        $sciencePopup = null,
+        $locationPopup = null,
+        $vacancyPopup = null,
+        template = null,
+        filters = {
+            scienceField: null,
+            country: null,
+            city: null,
+            remoteWork: false,
+            workspace: false,
+            nonProfit: false,
+            paid: false
+        };
 
     function renderToolTip() {
         $('.tooltip')
             .tooltipster({
                 position: 'bottom',
                 trigger: 'click',
-                contentAsHTML: true,
                 interactive: true,
                 theme: 'tooltipster-shadow',
                 functionReady: function() {
@@ -20,7 +31,7 @@
             })
             .each(function() {
                 var $this = $(this);
-                $this.tooltipster('content', $this.next().html());
+                $this.tooltipster('content', $($this.next().html())); // use jQuery object in order to save tooltip state
             });
 
         $('body')
@@ -34,7 +45,7 @@
             allowClear: true,
             placeholder: "Choose here"
         });
-    }
+    };
 
     self.renderProjects = function(projects) {
         projects
@@ -46,9 +57,39 @@
     };
 
     self.render = function() {
+    	template = $("#projectTemplate").remove().html();
+        $projects = $('.projects');
+        $sciencePopup = $('#sciencePopup');
+        $locationPopup = $('#locationPopup');
+        $vacancyPopup = $('#vacancyPopup');
+
         base.render();
         renderToolTip();
     };
+
+    self.onFilterChange = new Event(self);
+
+    $('body').on('click', '#sciencebtn', function() {
+        filters.scienceField = $('#sience').val() || null;
+
+        $sciencePopup.tooltipster('hide');
+    });
+
+    $('body').on('click', '#locationbtn', function() {
+        filters.country = $('#country').val() || null;
+        filters.city = $('#city').val() || null;
+
+        $locationPopup.tooltipster('hide');
+    });
+
+    $('body').on('click', '#vacancybtn', function() {
+        filters.workspace = $('#cbws').is(':checked');
+        filters.remoteWork = $('#cbrw').is(':checked');
+        filters.nonProfit = $('#cbnp').is(':checked');
+        filters.paid = $('#cbp').is(':checked');
+
+        $vacancyPopup.tooltipster('hide');
+    });
 
     view.ProjectsView = self;
 

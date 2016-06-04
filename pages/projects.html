@@ -41,14 +41,14 @@
         </nav>
         <div class="filters">
             <div class="layout">
-                <span class="dropdown tooltip" title="Sience">
+                <span class="dropdown tooltip" id="sciencePopup" title="Sience">
                     <svg class="triangle-point">
                         <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
                     </svg>
                     All Science Fields
                 </span>
                 <template>
-                    <select>
+                    <select id="science">
                         <option></option>
                         <optgroup label="E">
                             <option value="ecology">Ecology</option>
@@ -60,10 +60,10 @@
                         </optgroup>
                     </select>
                     <div class="button-wrapper">
-                        <button class="button apply">Applly</button>
+                        <button id="sciencebtn" class="button apply">Apply</button>
                     </div>
                 </template>
-                <span class="dropdown tooltip" title="Location">
+                <span class="dropdown tooltip" id="locationPopup" title="Location">
                     <svg class="triangle-point">
                         <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
                     </svg>
@@ -71,19 +71,19 @@
                 </span>
                 <template>
                     <label class="location-label">Country</label>
-                    <select>
+                    <select id="country">
                         <option></option>
-                        <option value="male">Male</option>
-                        <option value="famale">Female</option>
+                        <option value="ukraine">Ukraine</option>
+                        <option value="italy">Italy</option>
                     </select>
                     <label class="location-label">City</label>
-                    <select>
+                    <select id="city">
                         <option></option>
-                        <option value="male">Male</option>
-                        <option value="famale">Female</option>
+                        <option value="lviv">Lviv</option>
+                        <option value="milan">Milan</option>
                     </select>
                     <div class="button-wrapper">
-                        <button class="button apply">Applly</button>
+                        <button id="locationbtn" class="button apply">Apply</button>
                     </div>
                 </template>
                 <span class="dropdown tooltip" title="Popular">
@@ -99,23 +99,23 @@
                         <a href="#" class="link-item">Most joined</a>
                     </div>
                 </template>
-                <span class="dropdown tooltip" title="Vacancy">
+                <span class="dropdown tooltip" id="vacancyPopup" title="Vacancy">
                     <svg class="triangle-point">
                         <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
                     </svg>
                     Vacancy
                 </span>
                 <template>
-                    <input type="checkbox" id="cb1" value="remoteWork">
-                    <label class="vacancyCheck" for="cb1">Remote work</label>
-                    <input type="checkbox" id="cb2" value="workspace">
-                    <label class="vacancyCheck" for="cb2">Workspace</label>
-                    <input type="checkbox" id="cb3" value="nonProfit">
-                    <label class="vacancyCheck" for="cb3">Non-profit</label>
-                    <input type="checkbox" id="cb4" value="paid">
-                    <label class="vacancyCheck" for="cb4">Paid</label>
+                    <input type="checkbox" id="cbrw" value="remoteWork">
+                    <label class="vacancyCheck" for="cbrw">Remote work</label>
+                    <input type="checkbox" id="cbws" value="workspace">
+                    <label class="vacancyCheck" for="cbws">Workspace</label>
+                    <input type="checkbox" id="cbnp" value="nonProfit">
+                    <label class="vacancyCheck" for="cbnp">Non-profit</label>
+                    <input type="checkbox" id="cbp" value="paid">
+                    <label class="vacancyCheck" for="cbp">Paid</label>
                     <div class="button-wrapper">
-                        <button class="button apply">Applly</button>
+                        <button id="vacancybtn" class="button apply">Apply</button>
                     </div>
                 </template>
             </div>
