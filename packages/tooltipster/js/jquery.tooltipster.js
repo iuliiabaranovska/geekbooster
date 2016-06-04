@@ -438,20 +438,23 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 							else if(self.options.trigger == 'click'){
 								
 								// use a timeout to prevent immediate closing if the method was called on a click event and if options.delay == 0 (because of bubbling)
-								setTimeout(function() {
-									$('body').on('click.'+ self.namespace +' touchstart.'+ self.namespace, function() {
-										self.hide();
-									});
-								}, 0);
-								
-								// if interactive, we'll stop the events that were emitted from inside the tooltip to stop autoClosing
-								if (self.options.interactive) {
-									
-									// note : the touch events will just not be used if the plugin is not enabled on touch devices
-									self.$tooltip.on('click.'+ self.namespace +' touchstart.'+ self.namespace, function(event) {
-										event.stopPropagation();
-									});
-								}
+                                setTimeout(function() {
+                                    $('body').on('click.' + self.namespace + ' touchstart.' + self.namespace, function(event) {
+
+                                        var wasTooltipClicked = false;
+
+                                        if (self.options.interactive) {
+                                            
+                                            wasTooltipClicked = self.$tooltip.find(event.target).length > 0;
+
+                                            if (!wasTooltipClicked) {
+                                                self.hide();
+                                            }
+                                        } else {
+                                            self.hide();
+                                        }
+                                    });
+                                }, 0);
 							}
 						}
 					}
