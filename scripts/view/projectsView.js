@@ -1,6 +1,7 @@
 (function() {
 
     var view = extend("GeekBooster.View"),
+        Event = GeekBooster.Event,
         base = view.BaseView,
         self = Object.create(base),
         $projects = null,
@@ -57,7 +58,7 @@
     };
 
     self.render = function() {
-    	template = $("#projectTemplate").remove().html();
+        template = $("#projectTemplate").remove().html();
         $projects = $('.projects');
         $sciencePopup = $('#sciencePopup');
         $locationPopup = $('#locationPopup');
@@ -72,12 +73,16 @@
     $('body').on('click', '#sciencebtn', function() {
         filters.scienceField = $('#sience').val() || null;
 
+        self.onFilterChange.notify(filters);
+
         $sciencePopup.tooltipster('hide');
     });
 
     $('body').on('click', '#locationbtn', function() {
         filters.country = $('#country').val() || null;
         filters.city = $('#city').val() || null;
+
+        self.onFilterChange.notify(filters);
 
         $locationPopup.tooltipster('hide');
     });
@@ -87,6 +92,8 @@
         filters.remoteWork = $('#cbrw').is(':checked');
         filters.nonProfit = $('#cbnp').is(':checked');
         filters.paid = $('#cbp').is(':checked');
+
+        self.onFilterChange.notify(filters);
 
         $vacancyPopup.tooltipster('hide');
     });

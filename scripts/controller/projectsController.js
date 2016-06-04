@@ -12,6 +12,10 @@
         view.onShareTwitter.attach(base.shareTwitter);
         view.onShareGoogle.attach(base.shareGoogle);
 
+        view.onFilterChange.attach(function (sender, filters) {
+           console.log(filters); 
+        });
+
         view.render();
 
         projectService.getAll(function(projects) {
