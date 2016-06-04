@@ -59,6 +59,14 @@
     border-color: transparent transparent $main-color transparent;
 }
 
+.select2-container--default .select2-results__group{
+    color: $main-color;
+}
+
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+    background-color:$main-color;
+}
+
 .location-label {
     display: block;
     margin-bottom: 0.4em;

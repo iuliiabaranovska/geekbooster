@@ -401,6 +401,11 @@ body {
 content {
   margin: 0 auto 0 -4.2em; }
 
+input:focus {
+  outline: none !important;
+  border: 1px solid #ee9588 !important;
+  box-shadow: 0 0 10px #f3b9b0; }
+
 .item {
   text-decoration: none;
   text-transform: uppercase;
@@ -483,7 +488,8 @@ footer {
   justify-content: space-between;
   font-size: 90%;
   margin-top: 3em !important;
-  overflow: hidden; }
+  overflow: hidden;
+  color: #ffffff; }
   footer article {
     width: 30%;
     display: flex;

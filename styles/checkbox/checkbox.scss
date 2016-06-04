@@ -57,13 +57,8 @@
 [type="checkbox"]:disabled + label {
   color: #aaa;
 }
-/* accessibility */
-[type="checkbox"]:checked:focus + label:before,
-[type="checkbox"]:not(:checked):focus + label:before {
-  border: 1px dotted blue;
-}
 
 /* hover style just for information */
 label:hover:before {
-  border: 1px solid #4778d9!important;
+  border: 1px solid tint($main-color, 40) !important;
 }

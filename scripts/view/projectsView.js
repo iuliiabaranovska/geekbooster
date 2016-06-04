@@ -24,7 +24,7 @@
             });
 
         $('body')
-            .on("click", ".select2-search__field", function(event) {
+            .on("click", ".select2-search__field, .select2-results__group", function(event) {
                 event.stopPropagation();
             });
     };
@@ -32,7 +32,7 @@
     function renderSelect() {
         $('select').select2({
             allowClear: true,
-            placeholder: "Select an attribute"
+            placeholder: "Choose here"
         });
     }
 

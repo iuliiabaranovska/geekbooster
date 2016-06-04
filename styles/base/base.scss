@@ -55,6 +55,10 @@ body {
     margin-right: 1em;
 }
 
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
 .layout {
     width: 64%;
     margin: 0 auto 0 auto;
@@ -71,6 +75,12 @@ body {
 
 content {
     margin: 0 auto 0 -4.2em;
+}
+
+input:focus {
+    outline: none !important;
+    border:1px solid tint($main-color, 40) !important;
+    box-shadow: 0 0 10px tint($main-color, 60);
 }
 
 .item {

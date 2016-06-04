@@ -401,6 +401,11 @@ body {
 content {
   margin: 0 auto 0 -4.2em; }
 
+input:focus {
+  outline: none !important;
+  border: 1px solid #ee9588 !important;
+  box-shadow: 0 0 10px #f3b9b0; }
+
 .item {
   text-decoration: none;
   text-transform: uppercase;
@@ -646,14 +651,9 @@ footer {
 [type="checkbox"]:disabled + label {
   color: #aaa; }
 
-/* accessibility */
-[type="checkbox"]:checked:focus + label:before,
-[type="checkbox"]:not(:checked):focus + label:before {
-  border: 1px dotted blue; }
-
 /* hover style just for information */
 label:hover:before {
-  border: 1px solid #4778d9 !important; }
+  border: 1px solid #ee9588 !important; }
 
 .content-wrapper {
   background-color: #ffffff; }
@@ -700,6 +700,12 @@ label:hover:before {
 
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
   border-color: transparent transparent #e24f39 transparent; }
+
+.select2-container--default .select2-results__group {
+  color: #e24f39; }
+
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #e24f39; }
 
 .location-label {
   display: block;
