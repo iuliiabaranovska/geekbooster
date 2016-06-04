@@ -41,7 +41,7 @@
         </nav>
         <div class="filters">
             <div class="layout">
-                <span class="dropdown tooltip" title="This is my div's tooltip message!">
+                <span class="dropdown tooltip" title="Sience">
                     <svg class="triangle-point">
                         <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
                     </svg>
@@ -50,7 +50,7 @@
                 <template>
                     <p>Hello, my friend!</p>
                 </template>
-                <span class="dropdown tooltip" title="Hello!">
+                <span class="dropdown tooltip" title="Location">
                     <svg class="triangle-point">
                         <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
                     </svg>
@@ -73,18 +73,38 @@
                         <button class="button apply">Applly</button>
                     </div>
                 </template>
-                <span class="dropdown">
+                <span class="dropdown tooltip" title="Popular">
                     <svg class="triangle-point">
                         <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
                     </svg>
                     Most popular
                 </span>
-                <span class="dropdown">
+                <template>
+                    <div class="center">
+                        <a href="#" class="link-item">Most popular</a>
+                        <a href="#" class="link-item">Most donated</a>
+                        <a href="#" class="link-item">Most joined</a>
+                    </div>
+                </template>
+                <span class="dropdown tooltip" title="Vacancy">
                     <svg class="triangle-point">
                         <polygon class="triangle" points="0 0, 8 10, 16 0"></polygon>
                     </svg>
                     Vacancy
                 </span>
+                <template>
+                    <input type="checkbox" id="cb1" value="remoteWork">
+                    <label class="vacancyCheck" for="cb1">Remote work</label>
+                    <input type="checkbox" id="cb2" value="workspace">
+                    <label class="vacancyCheck" for="cb2">Workspace</label>
+                    <input type="checkbox" id="cb3" value="nonProfit">
+                    <label class="vacancyCheck" for="cb3">Non-profit</label>
+                    <input type="checkbox" id="cb4" value="paid">
+                    <label class="vacancyCheck" for="cb4">Paid</label>
+                    <div class="button-wrapper">
+                        <button class="button apply">Applly</button>
+                    </div>
+                </template>
             </div>
         </div>
         <div class="hashes layout">

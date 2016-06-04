@@ -1,4 +1,6 @@
 @import "../base/base.scss";
+@import "../checkbox/checkbox.scss";
+
 .content-wrapper {
     background-color: #ffffff;
 }
@@ -9,7 +11,7 @@
     padding-top: 1%;
     padding-bottom: 1%;
     .dropdown {
-        color: #000000;
+        color: $body-color;
         font-family: $caption-font;
         font-weight: bold;
         font-size: 110%;
@@ -21,22 +23,28 @@
             height: 0.8em;
             width: 1em;
             vertical-align: middle;
-            fill: #e24f39;
+            fill: $main-color;
         }
     }
 }
 
 .tooltipster-base {
     z-index: 1;
-    width: 10%;
+    width: 150px;
 }
 
 .tooltipster-shadow .tooltipster-content{
     padding: 0.5em;
+    font-family: $text-font;
+}
+
+.center{
+        text-align: center;
 }
 
 .select2 {
     width: 100% !important;
+    color: $body-color;
 }
 
 .select2-dropdown {
@@ -44,20 +52,40 @@
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow b {
-    border-color: #e24f39 transparent transparent transparent;
+    border-color: $main-color transparent transparent transparent;
 }
 
 .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
-    border-color: transparent transparent #e24f39 transparent;
+    border-color: transparent transparent $main-color transparent;
 }
 
 .location-label {
-    display: inline-block;
+    display: block;
     margin-bottom: 0.4em;
     &:not(:first-child){
         margin-top: 0.4em;
     }
     font-size: 90%;
+}
+
+.link-item {
+    text-decoration: none;
+    display: block;
+    color: $body-color;
+    line-height: 2;
+}
+
+.link-item:hover {
+    color: #5C696E;
+}
+
+.link-item:active {
+    color: $main-color;
+}
+
+.vacancyCheck{
+    display: block;
+    line-height: 2;
 }
 
 .hashes {

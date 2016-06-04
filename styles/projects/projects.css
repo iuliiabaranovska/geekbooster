@@ -379,7 +379,7 @@ body {
   height: 100%;
   font: 100% "FiraSansRegular", sans-serif;
   font-size: 90%;
-  color: #ffffff;
+  color: #000;
   display: flex;
   flex-direction: row;
   background-color: #323743;
@@ -483,7 +483,8 @@ footer {
   justify-content: space-between;
   font-size: 90%;
   margin-top: 3em !important;
-  overflow: hidden; }
+  overflow: hidden;
+  color: #ffffff; }
   footer article {
     width: 30%;
     display: flex;
@@ -584,6 +585,76 @@ footer {
 
   footer {
     overflow: hidden; } }
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px; }
+
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer; }
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #aaa;
+  background: #f8f8f8;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3); }
+
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: "\2713";
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 0.8;
+  color: #e24f39;
+  transition: all .2s; }
+
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0); }
+
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1); }
+
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd; }
+
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999; }
+
+[type="checkbox"]:disabled + label {
+  color: #aaa; }
+
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  border: 1px dotted blue; }
+
+/* hover style just for information */
+label:hover:before {
+  border: 1px solid #4778d9 !important; }
+
 .content-wrapper {
   background-color: #ffffff; }
 
@@ -593,7 +664,7 @@ footer {
   padding-top: 1%;
   padding-bottom: 1%; }
   .filters .dropdown {
-    color: #000000;
+    color: #000;
     font-family: "RobotoSlabRegular", sans-serif;
     font-weight: bold;
     font-size: 110%;
@@ -608,13 +679,18 @@ footer {
 
 .tooltipster-base {
   z-index: 1;
-  width: 10%; }
+  width: 150px; }
 
 .tooltipster-shadow .tooltipster-content {
-  padding: 0.5em; }
+  padding: 0.5em;
+  font-family: "FiraSansRegular", sans-serif; }
+
+.center {
+  text-align: center; }
 
 .select2 {
-  width: 100% !important; }
+  width: 100% !important;
+  color: #000; }
 
 .select2-dropdown {
   z-index: 10; }
@@ -626,11 +702,27 @@ footer {
   border-color: transparent transparent #e24f39 transparent; }
 
 .location-label {
-  display: inline-block;
+  display: block;
   margin-bottom: 0.4em;
   font-size: 90%; }
   .location-label:not(:first-child) {
     margin-top: 0.4em; }
+
+.link-item {
+  text-decoration: none;
+  display: block;
+  color: #000;
+  line-height: 2; }
+
+.link-item:hover {
+  color: #5C696E; }
+
+.link-item:active {
+  color: #e24f39; }
+
+.vacancyCheck {
+  display: block;
+  line-height: 2; }
 
 .hashes {
   background-color: #323743; }

@@ -6,15 +6,6 @@
         $projects = $('.projects'),
         template = $("#projectTemplate").remove().html();
 
-    self.renderProjects = function(projects) {
-        projects
-            .reverse() // for correct order since we use prepend method
-            .forEach(function(project) {
-                var projectMarkup = Mustache.to_html(template, project);
-                $projects.prepend(projectMarkup);
-            });
-    };
-
     function renderToolTip() {
         $('.tooltip')
             .tooltipster({
@@ -22,7 +13,6 @@
                 trigger: 'click',
                 contentAsHTML: true,
                 interactive: true,
-                autoClose: false,
                 theme: 'tooltipster-shadow',
                 functionReady: function() {
                     renderSelect();
@@ -33,10 +23,10 @@
                 $this.tooltipster('content', $this.next().html());
             });
 
-        // $('body').on('click', function() {
-        //     console.log("haha");
-        //     $('.tooltip').tooltipster('hide');
-        // });
+        $('body')
+            .on("click", ".select2-search__field", function(event) {
+                event.stopPropagation();
+            });
     };
 
     function renderSelect() {
@@ -45,6 +35,15 @@
             placeholder: "Select an attribute"
         });
     }
+
+    self.renderProjects = function(projects) {
+        projects
+            .reverse() // for correct order since we use prepend method
+            .forEach(function(project) {
+                var projectMarkup = Mustache.to_html(template, project);
+                $projects.prepend(projectMarkup);
+            });
+    };
 
     self.render = function() {
         base.render();

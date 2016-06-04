@@ -22,6 +22,7 @@ sans-serif;
 $aliquam-font: "Aliquam",
 sans-serif;
 $text-color: #ffffff;
+$body-color: #000;
 $main-color: #e24f39;
 $background-color: #323743;
 $hover-color: #c2bdbd;
@@ -33,7 +34,7 @@ body {
     height: 100%;
     font: 100% $text-font;
     font-size: 90%;
-    color: $text-color;
+    color: $body-color;
     display: flex;
     flex-direction: row;
     background-color: $background-color;
@@ -164,6 +165,7 @@ footer {
     font-size: 90%;
     margin-top: 3em !important;
     overflow: hidden;
+    color: $text-color;
     article {
         width: 30%;
         display: flex;
