@@ -16,15 +16,18 @@
             // projectService.findVacancy(filters, function(projects) {
             //     view.renderProjects(projects);                
             // });
-            if (filters.country === null) {
-                projectService.getAll(function(projects) {
-                    view.renderProjects(projects);
-                });
-            } else {
-                projectService.findLocation(filters.country, function(projects) {
-                    view.renderProjects(projects);
-                });
-            }
+            // if (filters.country === null) {
+            //     projectService.getAll(function(projects) {
+            //         view.renderProjects(projects);
+            //     });
+            // } else {
+            //     projectService.findLocation(filters.country, function(projects) {
+            //         view.renderProjects(projects);
+            //     });
+            // }
+            projectService.find(filters, function(projects) {
+                view.renderProjects(projects);
+            });
         });
 
         view.render();

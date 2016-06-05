@@ -75,15 +75,15 @@
             };
         };
 
-        IndexedTableService.prototype.searchByIndex = function(indexName, country, callback) {
+        IndexedTableService.prototype.searchByIndex = function(indexName, searchFilter, callback) {
             var self = this,
                 request = indexedDb.open(dbName, dbVersion),
-                result=[];
-
+                result = [];
+ 
             request.onsuccess = function(event) {
                 var dataBase = request.result,
                     objectStore = dataBase.transaction(self.getTableName()).objectStore(self.getTableName()),
-                    singleKeyRange = IDBKeyRange.only(country);
+                    singleKeyRange = IDBKeyRange.only(searchFilter);
                     index = objectStore.index(indexName);
 
                 index.openCursor(singleKeyRange).onsuccess = function(event) {

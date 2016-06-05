@@ -74,7 +74,7 @@
     self.onFilterChange = new Event(self);
 
     $('body').on('click', '#sciencebtn', function() {
-        filters.scienceField = $('#sience').val() || null;
+        filters.scienceField = $('#science').val() || null;
 
         self.onFilterChange.notify(filters);
 
