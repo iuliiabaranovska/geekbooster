@@ -20,6 +20,16 @@
 
         this.labels = (entity != null) ? entity.labels : [];
         this.tags = (entity != null) ? entity.tags : [];
+
+        this.science = (entity != null) ? entity.science : null;
+
+        this.country = (entity != null) ? entity.country : null;
+        this.city = (entity != null) ? entity.city : null;
+
+        this.remoteWork = (entity != null) ? entity.remoteWork : null;
+        this.workspace = (entity != null) ? entity.workspace : null;
+        this.nonProfit = (entity != null) ? entity.nonProfit : null;
+        this.paid = (entity != null) ? entity.paid : null;
     };
 
     model.Project.prototype.toEntity = function() {
@@ -37,7 +47,17 @@
             progress: this.progress,
 
             labels: this.labels,
-            tags: this.tags
+            tags: this.tags,
+
+            science: this.science,
+
+            country: this.country,
+            city: this.city,
+
+            remoteWork: this.remoteWork,
+            workspace: this.workspace,
+            nonProfit: this.nonProfit,
+            paid: this.paid
         };
     };
 

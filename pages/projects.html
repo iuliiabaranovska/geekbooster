@@ -73,14 +73,16 @@
                     <label class="location-label">Country</label>
                     <select id="country">
                         <option></option>
-                        <option value="ukraine">Ukraine</option>
-                        <option value="italy">Italy</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="Italy">Italy</option>
+                        <option value="France">France</option>
                     </select>
                     <label class="location-label">City</label>
                     <select id="city">
                         <option></option>
-                        <option value="lviv">Lviv</option>
-                        <option value="milan">Milan</option>
+                        <option value="Lviv">Lviv</option>
+                        <option value="Milan">Milan</option>
+                        <option value="Paris">Paris</option>
                     </select>
                     <div class="button-wrapper">
                         <button id="locationbtn" class="button apply">Apply</button>
@@ -147,7 +149,7 @@
                                     {{/labels}}
                                 </ul>
                             </header>
-                            <h2 class="name">{{name}}</h2>
+                            <h2 class="name">{{name}}, {{country}}</h2>
                             <h3 class="creator">{{creator}}<button class="button">Go</button></h3>
                             <div class="description">{{description}}</div>
                             <div class="progress">Progress: {{getPercentageProgress}}%

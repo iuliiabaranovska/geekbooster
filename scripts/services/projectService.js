@@ -1,6 +1,7 @@
 (function() {
 
     var services = extend("GeekBooster.Services"),
+        Project = GeekBooster.Model.Project,
         dbProjectService = new services.IndexedTableService("Projects");
 
     services.ProjectService = (function() {
@@ -9,51 +10,31 @@
 
         ProjectService.prototype.getAll = function(callback) {
 
-            var index = 0,
-                projects = [],
-                newProject = null;
-
-            for (index = 0; index < 10; index++) {
-
-                newProject = new GeekBooster.Model.Project();
-
-                newProject.id = index + 1;
-                newProject.logoUrl = "../images/projects/spaceman.png";
-
-                newProject.currentBudget = index * 100 + 500;
-                newProject.totalBudget = newProject.currentBudget * 1.5;
-                newProject.contributorsAmount = index * 3 + 10;
-
-                newProject.labels = ["Popular", "Global aim's"];
-
-                newProject.name = "Garold's space odisea";
-                newProject.creator = "Iuliia Baranovska";
-                newProject.description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed purus libero, iaculis ac arcu nec, pretium fringilla magna. " +
-                    "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec et urna faucibus, lobortis elit sed, blandit sem. " +
-                    "Nulla facilisi. Nam dignissim scelerisque odio ac venenatis. Pellentesque in mollis risus. Morbi tempor sodales sodales. " +
-                    "Nulla fringilla, sapien ac finibus commodo, dui tortor porta leo, quis sollicitudin mauris neque eget sem. " +
-                    "Phasellus id nulla ut arcu eleifend porttitor sed ut dolor. Praesent elit dolor, euismod ac consequat vitae, consectetur nec nisi. " +
-                    "Pellentesque nec nisi non lectus vestibulum vulputate. Mauris nec hendrerit magna. Maecenas quis tincidunt augue. Duis ornare fringilla lobortis.";
-
-                newProject.progress = index / 10;
-                newProject.tags = ["space", "mars"];
-
-                projects.push(newProject);
-            };
-
-            //dbProjectService.createStore("id",[new GeekBooster.Index('ProjectName',"name", false), new GeekBooster.Index('ProjectCreator',"creator", false)]);
-            //dbProjectService.addRange(projects);
-
             dbProjectService.getAll(function(items) {
-                var projectItem = items.map(function(item) {
-                    return new GeekBooster.Model.Project(item);
+
+                var projects = items.map(function(item) {
+                    return new Project(item);
                 });
-                callback(projectItem);
+
+                callback(projects);
             });
+        };
 
-             dbProjectService.searchItems("Gar");
+        ProjectService.prototype.findVacancy = function(filters, callback) {
 
-            //callback(projects);
+            this.getAll(function(projects) {
+
+                callback(projects.filter(function(p) {
+                    return (p.remoteWork === filters.remoteWork || filters.remoteWork === false)
+                    && (p.workspace === filters.workspace || filters.workspace === false)
+                    && (p.nonProfit === filters.nonProfit || filters.nonProfit === false)
+                    && (p.paid === filters.paid || filters.paid === false);
+                }));
+            });
+        };
+
+        ProjectService.prototype.findLocation = function(country, callback) {
+            dbProjectService.searchByIndex('ProjectCountry', country, callback);
         };
 
         return ProjectService;

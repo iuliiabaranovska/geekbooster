@@ -23,24 +23,6 @@
             };
         };
 
-        IndexedTableService.prototype.createStore = function(keyPath, indexes) {
-
-            var self = this,
-                request = indexedDb.open(dbName, dbVersion);
-
-            indexes = indexes || [];
-
-            request.onupgradeneeded = function(event) {
-
-                var dataBase = request.result,
-                    objectStore = dataBase.createObjectStore(self.getTableName(), { keyPath: keyPath });
-
-                indexes.forEach(function(index) {
-                    objectStore.createIndex(index.name, index.keyPath, { unique: index.unique });
-                });
-            };
-        };
-
         IndexedTableService.prototype.getAll = function(callback) {
 
             var self = this,
@@ -60,22 +42,6 @@
                         callback(result);
                     }
                 };
-            };
-        };
-
-        IndexedTableService.prototype.addRange = function(items) {
-
-            var self = this,
-                request = indexedDb.open(dbName, dbVersion);
-
-            request.onsuccess = function(event) {
-
-                var dataBase = request.result,
-                    objectStore = dataBase.transaction([self.getTableName()], "readwrite").objectStore(self.getTableName());
-
-                items.forEach(function(item) {
-                    objectStore.add(item.toEntity());
-                });
             };
         };
 
@@ -107,7 +73,30 @@
                     };
                 };
             };
-        }
+        };
+
+        IndexedTableService.prototype.searchByIndex = function(indexName, country, callback) {
+            var self = this,
+                request = indexedDb.open(dbName, dbVersion),
+                result=[];
+
+            request.onsuccess = function(event) {
+                var dataBase = request.result,
+                    objectStore = dataBase.transaction(self.getTableName()).objectStore(self.getTableName()),
+                    singleKeyRange = IDBKeyRange.only(country);
+                    index = objectStore.index(indexName);
+
+                index.openCursor(singleKeyRange).onsuccess = function(event) {
+                    var cursor = event.target.result;
+                    if (cursor) {                        
+                        result.push(cursor.value);
+                        cursor.continue();
+                    } else {
+                        callback(result);
+                    }
+                };
+            }; 
+        };
 
         return IndexedTableService;
     }());

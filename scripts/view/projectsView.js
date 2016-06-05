@@ -49,6 +49,9 @@
     };
 
     self.renderProjects = function(projects) {
+
+        $projects.find('article').remove();
+
         projects
             .reverse() // for correct order since we use prepend method
             .forEach(function(project) {
