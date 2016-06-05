@@ -45,57 +45,27 @@
             };
         };
 
-        IndexedTableService.prototype.searchItems = function(item) {
-
-            var self = this,
-                request = indexedDb.open(dbName, dbVersion),
-                result = [];
-
-            request.onsuccess = function(event) {
-                var dataBase = request.result,
-                    objectStore = dataBase.transaction(self.getTableName()).objectStore(self.getTableName()),
-                    i, index,
-                    boundKeyRange = IDBKeyRange.bound(item, item + "z");
-
-                for (i = 0; i < objectStore.indexNames.length; i++) {
-
-                    index = objectStore.index(objectStore.indexNames[i]);
-
-                    index.openCursor(boundKeyRange).onsuccess = function(event) {
-                        var cursor = event.target.result;
-                        if (cursor) {
-                            //console.log(cursor.value);
-                            //console.log(item);
-                            cursor.continue();
-                        } else {
-                            //console.log("This items don't exist!")
-                        }
-                    };
-                };
-            };
-        };
-
         IndexedTableService.prototype.searchByIndex = function(indexName, searchFilter, callback) {
             var self = this,
                 request = indexedDb.open(dbName, dbVersion),
                 result = [];
- 
+
             request.onsuccess = function(event) {
                 var dataBase = request.result,
                     objectStore = dataBase.transaction(self.getTableName()).objectStore(self.getTableName()),
-                    singleKeyRange = IDBKeyRange.only(searchFilter);
+                    singleKeyRange = IDBKeyRange.only(searchFilter),
                     index = objectStore.index(indexName);
 
                 index.openCursor(singleKeyRange).onsuccess = function(event) {
                     var cursor = event.target.result;
-                    if (cursor) {                        
+                    if (cursor) {
                         result.push(cursor.value);
                         cursor.continue();
                     } else {
                         callback(result);
                     }
                 };
-            }; 
+            };
         };
 
         return IndexedTableService;

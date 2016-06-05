@@ -399,7 +399,8 @@ body {
   z-index: 10; }
 
 content {
-  margin: 0 auto 0 -4.2em; }
+  margin: 0 auto 0 -4.2em;
+  width: 100%; }
 
 input:focus {
   outline: none !important;
@@ -577,6 +578,8 @@ footer {
       margin: -1px; }
       .booster-nav .headermenu .end-items li:first-of-type {
         margin-top: 4%; }
+      .booster-nav .headermenu .end-items li:last-child > a {
+        margin-right: 1em; }
     .booster-nav .headermenu .end-items span {
       display: none; }
   .booster-nav .headermenu .show-navigation {

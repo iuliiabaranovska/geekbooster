@@ -75,6 +75,7 @@ body {
 
 content {
     margin: 0 auto 0 -4.2em;
+    width: 100%;
 }
 
 input:focus {
@@ -282,6 +283,9 @@ footer {
                     margin: -1px;
                     &:first-of-type {
                         margin-top: 4%;
+                    }
+                    &:last-child > a {
+                        margin-right: 1em;
                     }
                 }
                 span {

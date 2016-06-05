@@ -23,24 +23,7 @@
 
                 callback(projects);
             });
-        };
-
-        ProjectService.prototype.findVacancy = function(filters, callback) {
-
-            this.getAll(function(projects) {
-
-                callback(projects.filter(function(p) {
-                    return (p.remoteWork === filters.remoteWork || filters.remoteWork === false) 
-                    && (p.workspace === filters.workspace || filters.workspace === false) 
-                    && (p.nonProfit === filters.nonProfit || filters.nonProfit === false) 
-                    && (p.paid === filters.paid || filters.paid === false);
-                }));
-            });
-        };
-
-        ProjectService.prototype.findLocation = function(searchfilter, callback) {
-            dbProjectService.searchByIndex('ProjectCountry', searchfilter, callback);
-        };
+        };       
 
         ProjectService.prototype.find = function(filters, callback) {
 
