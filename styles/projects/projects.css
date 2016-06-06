@@ -383,7 +383,8 @@ body {
   display: flex;
   flex-direction: row;
   background-color: #323743;
-  overflow: scroll; }
+  overflow-y: scroll;
+  overflow-x: hidden; }
 
 .layout {
   width: 64%;

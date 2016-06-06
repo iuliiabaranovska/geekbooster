@@ -38,7 +38,8 @@ body {
     display: flex;
     flex-direction: row;
     background-color: $background-color;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 @mixin logo {
@@ -55,8 +56,11 @@ body {
     margin-right: 1em;
 }
 
-@function tint($color, $percentage) {
-    @return mix(white, $color, $percentage);
+@function tint($color,
+$percentage) {
+    @return mix(white,
+    $color,
+    $percentage);
 }
 
 .layout {
@@ -80,7 +84,7 @@ content {
 
 input:focus {
     outline: none !important;
-    border:1px solid tint($main-color, 40) !important;
+    border: 1px solid tint($main-color, 40) !important;
     box-shadow: 0 0 10px tint($main-color, 60);
 }
 
@@ -226,31 +230,31 @@ footer {
 }
 
 .scrollup {
-        display: inline-block;
-        height: 3em;
-        width: 3em;
-        position: fixed;
-        bottom: 100px;
-        right: 20px;
-        z-index: 10;
-        border-radius: 3em;
-        overflow: hidden;
-        text-indent: 100%;
-        white-space: nowrap;
-        background: $main-color url(../../images/additionals/cd-top-arrow.svg) no-repeat center 50%;
-        visibility: hidden;
-        opacity: 0;
-        -webkit-transition: opacity .3s 0s, visibility 0s .3s;
-        -moz-transition: opacity .3s 0s, visibility 0s .3s;
-        transition: opacity .3s 0s, visibility 0s .3s;
-        &.scrollup-is-visible{
-            -webkit-transition: opacity .3s 0s, visibility 0s 0s;
-            -moz-transition: opacity .3s 0s, visibility 0s 0s;
-            transition: opacity .3s 0s, visibility 0s 0s;
-            visibility: visible;
-            opacity: 1;
-        }
+    display: inline-block;
+    height: 3em;
+    width: 3em;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    z-index: 10;
+    border-radius: 3em;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    background: $main-color url(../../images/additionals/cd-top-arrow.svg) no-repeat center 50%;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+    -moz-transition: opacity .3s 0s, visibility 0s .3s;
+    transition: opacity .3s 0s, visibility 0s .3s;
+    &.scrollup-is-visible {
+        -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+        -moz-transition: opacity .3s 0s, visibility 0s 0s;
+        transition: opacity .3s 0s, visibility 0s 0s;
+        visibility: visible;
+        opacity: 1;
     }
+}
 
 @media (max-width: 999px) {
     .booster-nav {
